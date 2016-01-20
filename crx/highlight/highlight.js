@@ -2,20 +2,18 @@
 // Please acknowledge use of this code by including this header.
 // Modified by Andrew Golczynski (error handling, specialization for crx deployment)
 
-function Hilitor(id, tag)
-{
-
+function Hilitor(id, tag) {
   var targetNode = document.getElementById(id) || document.body;
-  var hiliteTag = tag || "EM";
-  var skipTags = new RegExp("^(?:" + hiliteTag + "|SCRIPT|FORM|SPAN)$");
-  var color = "#ff9900";
-  var wordColor = "";
+  var hiliteTag = tag; //todo - if tag is null, we could hit problems...
+  var skipTags = new RegExp("^(?:(^\\b" + hiliteTag + "\\-\\S+)|SCRIPT|FORM|SPAN|TEXTAREA)$"); //todo - make sure this isn't ruined
+  var colors = ["#ff9900", "#ffff00", "#9f9", "#f99", "#f6f"];
+  var wordColor = [];
+  var colorIdx = 0;
   var matchRegex = "";
   var openLeft = false;
   var openRight = false;
 
-  this.setRegex = function(input)
-  {
+  this.setRegex = function(input) {
     input = input.replace(/^[^\w]+|[^\w]+$/g, "").replace(/[^\w'-]+/g, "|");
     if (input == "") {return 0;}
     var re = "(" + input + ")";
@@ -24,8 +22,7 @@ function Hilitor(id, tag)
     matchRegex = new RegExp(re, "i");
   };
 
-  this.getRegex = function()
-  {
+  this.getRegex = function() {
     var retval = matchRegex.toString();
     retval = retval.replace(/(^\/(\\b)?|\(|\)|(\\b)?\/i$)/g, "");
     retval = retval.replace(/\|/g, " ");
@@ -33,8 +30,7 @@ function Hilitor(id, tag)
   };
 
   // recursively apply word highlighting
-  this.hiliteWords = function(node)
-  {
+  this.hiliteWords = function(node) {
     if(node === undefined || !node) return;
     if(!matchRegex) return;
     if(skipTags.test(node.nodeName)) return;
@@ -45,25 +41,29 @@ function Hilitor(id, tag)
     }
     if(node.nodeType == 3) { // NODE_TEXT
       if((nv = node.nodeValue) && (regs = matchRegex.exec(nv))) {
-        wordColor = color;
-
+        if(!wordColor[regs[0].toLowerCase()]) {
+          wordColor[regs[0].toLowerCase()] = colors[colorIdx++ % colors.length];
+        }
+		//create new node to hold hilighted text
         var match = document.createElement(hiliteTag);
-        match.appendChild(document.createTextNode(regs[0]));
-        match.style.backgroundColor = wordColor;
-        match.style.fontStyle = "inherit";
-        match.style.color = "#000";
-
+		match = document.createTextNode(regs[0]);
+		//split out the old text, and replace it with the match node from above
         var after = node.splitText(regs.index);
         after.nodeValue = after.nodeValue.substring(regs[0].length);
-        node.parentNode.insertBefore(match, after);
+		var owner = document.createElement("span");
+		node.parentNode.insertBefore(owner, after);
+		owner.appendChild(match);
+		owner.className = hiliteTag;
+		owner.style.backgroundColor = wordColor[regs[0].toLowerCase()];
+        owner.style.fontStyle = "inherit";
+        owner.style.color = "#000";
       }
     };
   };
 
   // remove highlighting
-  this.remove = function()
-  {
-    var arr = document.getElementsByTagName(hiliteTag);
+  this.remove = function() {
+    var arr = document.getElementsByClassName(hiliteTag);
     while(arr.length && (el = arr[0])) {
       var parent = el.parentNode;
       parent.replaceChild(el.firstChild, el);
@@ -72,17 +72,14 @@ function Hilitor(id, tag)
   };
 
   // start highlighting at target node
-  this.apply = function(input)
-  {
-    this.remove();
+  this.apply = function(input) {
     if(input === undefined || !input) return;
     if(this.setRegex(input) == 0) {return;}
     this.hiliteWords(targetNode);
   };
-
 }
 
-var hi = new Hilitor();
+var hi = new Hilitor(document.body, "hilighted-content");
 
 function highlightSelectedText() {
   var sel = window.getSelection().toString();
@@ -90,6 +87,14 @@ function highlightSelectedText() {
 }
 
 document.addEventListener("dblclick", highlightSelectedText);
-window.oncontextmenu = function() {
-  hi.remove();
+document.addEventListener("keydown", clearEvent);
+
+function clearEvent(event) {
+	var key = window.event?event.which:e.keyCode;
+	if(key == 27) {
+		hi.remove();
+	}
 }
+
+
+
