@@ -82,6 +82,9 @@ function Hilitor(id, tag) {
 var hi = new Hilitor(document.body, "hilighted-content");
 
 function highlightSelectedText() {
+  if (!window.event.ctrlKey) {
+	  return;
+  }
   var sel = window.getSelection().toString();
   hi.apply(sel);
 }
