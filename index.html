@@ -1,27 +1,166 @@
 <html>
-	<header>
+	<head>
 		<title>
 			This is title
 		</title>
-	</header>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://daily.appianci.net/suite/tempo/tempo.nocache.js"></script>
+		<style>
+		  .container {
+			margin-top: 40px;
+		  }
+		  .modal-dialog {
+			width: 800px;
+		  }
+		  .panel {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin-bottom: 0;
+			border-radius: 0;
+			z-index: 10000;
+			font-size: 12px;
+		  }
+		  .panel-heading {
+			border-radius: 0;
+		  }
+		</style>
+		<script type="text/javascript" src="https://daily.appianci.net/suite/cors"></script>
+	</head>
+	
 	
 	<body>
-		<div id="config">
-			Server name: <input id="server" type="text"><br>
-			Task ID: <input id="task" type="text"><br>
-			Theme ID: <input id="theme" type="text"><br>
+		<div class="container">
+		  <div class="well">
+			<h4>DOM Overlay test pages</h4>
+			<p> Pops up Bootstrap modal window, executes script which adds a form to the modal.  </p>
+			<label>Task Id</label>
+			<input id="myTaskId" name="taskId" class="taskId" />
+			<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Open form</button>
+		  </div>
 		</div>
 		
-		<div id="content">
-			<script type="text/javascript" src="https://daily.appianci.net/suite/tempo/tempo.nocache.js"></script>
-			<appian-task id="appian-3box0lqtdv4pldi" taskId="1" themeIdentifier="" ></appian-task>
+	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <h4 class="modal-title" id="myModalLabel">Appian SAIL Form in the Modal Window</h4>
+			</div>
+			<div class="modal-body">
+			  <div id="sail-container"></div>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" id="inject-action">Inject Action</button>
+			  <button type="button" class="btn btn-default" id="inject-task">Inject SAIL task</button>
+			  <button type="button" class="btn btn-warning" id="call-native-destroy">Call HTMLElement.destroy()</button>
+			</div>
+		  </div>
 		</div>
+	  </div>
 
-		<script>
-			function render() {
-				return;
+	  <script>
+		$(function() {
+		  $('#inject-task').on('click', function() {
+			// Requires configuration
+			injectSAILTask(document.getElementById('myTaskId').value);
+		  });
+
+		  $('#inject-action').on('click', function() {
+			// Requires configuration
+			injectSAILAction('0003d9fb-5862-8000-9e06-010000010000', "");
+		  });
+
+		  $('#call-native-destroy').on('click', destroy);
+
+		  $('#myModal').on('hidden.bs.modal', destroy);
+
+		  // Listening to message 
+		  document.onmessage = function(event) {
+			$('#myModal').modal('hide');
+		  };
+		});
+	  </script>
+	  
+	  <script>
+		function destroy() {
+			var container = document.querySelector('#sail-container');
+			var action = container.querySelector('appian-related-action');
+			var task = container.querySelector('appian-task');
+			if (action) {
+			  action.destroy();
+			} 
+			if (task) {
+			  task.destroy();
 			}
-		</script>
+			$("body").removeClass("appian-body");
+		}
+		// The code we use in the portal is 99% the same
+		function injectSAILTask(taskId) {
+		  function close() {
+			removeAppianElement();
+		  }
+		  function onError(event) {
+			alert(event.detail.code);
+			close();
+		  }
+
+		  var sail;
+		  var createAppianElement = function(){
+			// Well, Appian doesn't read the class
+			//    Workaround
+			$("body").addClass("appian-body");
+			sail = $("<appian-task></appian-task>");
+			sail.attr("taskId", taskId); 
+			sail.on("submit", close);
+			$("#sail-container").html(sail);
+		  };
+
+		  var removeAppianElement = function(){
+			// Neither removes it
+			//    Workaround
+			$("body").removeClass("appian-body");
+			sail.off("submit", close);
+			// sail.off("error", close);
+			destroy();
+		  };
+		  createAppianElement();
+		}
+		// The code we use in the portal is 99% the same
+		function injectSAILAction(actionUUID, theme) {
+		  function close() {
+			removeAppianElement();
+		  }
+		  function onError(event) {
+			alert(event.detail.code);
+			close();
+		  }
+
+		  var sail;
+		  var createAppianElement = function(){
+			// Well, Appian doesn't read the class
+			//    Workaround
+			$("body").addClass("appian-body");
+			sail = $("<appian-action></appian-action>");
+			sail.attr("theme", theme);
+			sail.attr("processModelUuid", actionUUID);
+			sail.on("submit", close);
+			$("#sail-container").html(sail);
+		  };
+
+		  var removeAppianElement = function(){
+			// Neither removes it
+			//    Workaround
+			$("body").removeClass("appian-body");
+			sail.off("submit", close);
+			destroy();
+		  };
+		  createAppianElement();
+		}
+	  </script>
+	  
 	</body>
 </html>
-
