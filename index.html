@@ -35,12 +35,9 @@
 	<body>
 		<div class="container">
 		  <div class="well">
-			<h4>DOM Overlay test pages</h4>
-			<p> Pops up Bootstrap modal window, executes script which adds a form to the modal.  </p>
-			<label>Task Id</label>
-			<input id="myTaskId" name="taskId" class="taskId" />
-			<button type="button" class="btn btn-info btn-xs" id="open-modal" data-toggle="modal" data-target="#myModal">Open form</button>
-			<button type="button" class="btn btn-default" id="inject-action">Inject Action</button>
+			<div>
+				<a data-toggle="modal" id="open-modal" data-target="#myModal" style="cursor: pointer">Open Modal</a>
+			</div>
 		  </div>
 		</div>
 		
@@ -55,7 +52,6 @@
 			  <div id="sail-container"></div>
 			</div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-default" id="inject-task">Inject SAIL task</button>
 			  <button type="button" class="btn btn-warning" id="call-native-destroy">Call HTMLElement.destroy()</button>
 			</div>
 		  </div>
@@ -64,17 +60,7 @@
 	  
 	  <script>
 		$(function() {
-		  $('#inject-task').on('click', function() {
-			// Requires configuration
-			injectSAILTask(document.getElementById('myTaskId').value);
-		  });
-		  
 		  $('#open-modal').on('click', function() {
-			injectSAILAction('0002db78-87ca-8000-fe86-640000640000', "");
-		  });
-
-		  $('#inject-action').on('click', function() {
-			// Requires configuration
 			injectSAILAction('0002db78-87ca-8000-fe86-640000640000', "");
 		  });
 
@@ -101,37 +87,6 @@
 			  task.destroy();
 			}
 			$("body").removeClass("appian-body");
-		}
-		// The code we use in the portal is 99% the same
-		function injectSAILTask(taskId) {
-		  function close() {
-			removeAppianElement();
-		  }
-		  function onError(event) {
-			alert(event.detail.code);
-			close();
-		  }
-
-		  var sail;
-		  var createAppianElement = function(){
-			// Well, Appian doesn't read the class
-			//    Workaround
-			$("body").addClass("appian-body");
-			sail = $("<appian-task></appian-task>");
-			sail.attr("taskId", taskId); 
-			sail.on("submit", close);
-			$("#sail-container").html(sail);
-		  };
-
-		  var removeAppianElement = function(){
-			// Neither removes it
-			//    Workaround
-			$("body").removeClass("appian-body");
-			sail.off("submit", close);
-			// sail.off("error", close);
-			destroy();
-		  };
-		  createAppianElement();
 		}
 		// The code we use in the portal is 99% the same
 		function injectSAILAction(actionUUID, theme) {
