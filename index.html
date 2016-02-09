@@ -44,15 +44,8 @@
 	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">
-			<div class="modal-header">
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <h4 class="modal-title" id="myModalLabel">Appian SAIL Form in the Modal Window</h4>
-			</div>
 			<div class="modal-body">
 			  <div id="sail-container"></div>
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-warning" id="call-native-destroy">Call HTMLElement.destroy()</button>
 			</div>
 		  </div>
 		</div>
@@ -63,8 +56,6 @@
 		  $('#open-modal').on('click', function() {
 			injectSAILAction('0002db78-87ca-8000-fe86-640000640000', "");
 		  });
-
-		  $('#call-native-destroy').on('click', destroy);
 
 		  $('#myModal').on('hidden.bs.modal', destroy);
 
@@ -92,6 +83,7 @@
 		function injectSAILAction(actionUUID, theme) {
 		  function close() {
 			removeAppianElement();
+			$('#myModal').modal('hide');
 		  }
 		  function onError(event) {
 			alert(event.detail.code);
