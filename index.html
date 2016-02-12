@@ -28,90 +28,11 @@
 			border-radius: 0;
 		  }
 		</style>
-		
 	</head>
 	
 	
 	<body>
-		<div class="container">
-		  <div class="well">
-			<div>
-				<a data-toggle="modal" id="open-modal" data-target="#myModal" style="cursor: pointer">Open Modal</a>
-			</div>
-		  </div>
-		</div>
-		
-	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-body">
-			  <div id="sail-container"></div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  
-	  <script>
-		$(function() {
-		  $('#open-modal').on('click', function() {
-			injectSAILAction('0002db78-87ca-8000-fe86-640000640000', "");
-		  });
-
-		  $('#myModal').on('hidden.bs.modal', destroy);
-
-		  // Listening to message 
-		  document.onmessage = function(event) {
-			$('#myModal').modal('hide');
-		  };
-		});
-	  </script>
-	  
-	  <script>
-		function destroy() {
-			var container = document.querySelector('#sail-container');
-			var action = container.querySelector('appian-related-action');
-			var task = container.querySelector('appian-task');
-			if (action) {
-			  action.destroy();
-			} 
-			if (task) {
-			  task.destroy();
-			}
-			$("body").removeClass("appian-body");
-		}
-		// The code we use in the portal is 99% the same
-		function injectSAILAction(actionUUID, theme) {
-		  function close() {
-			removeAppianElement();
-			$('#myModal').modal('hide');
-		  }
-		  function onError(event) {
-			alert(event.detail.code);
-			close();
-		  }
-
-		  var sail;
-		  var createAppianElement = function(){
-			// Well, Appian doesn't read the class
-			//    Workaround
-			$("body").addClass("appian-body");
-			sail = $("<appian-action></appian-action>");
-			sail.attr("theme", theme);
-			sail.attr("processModelUuid", actionUUID);
-			sail.on("submit", close);
-			$("#sail-container").html(sail);
-		  };
-
-		  var removeAppianElement = function(){
-			// Neither removes it
-			//    Workaround
-			$("body").removeClass("appian-body");
-			sail.off("submit", close);
-			destroy();
-		  };
-		  createAppianElement();
-		}
-	  </script>
-	  
+		<p>This is a paragraph</p>
+		<appian-task taskId="1"><appian-task>
 	</body>
 </html>
