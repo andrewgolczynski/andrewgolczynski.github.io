@@ -8,17 +8,39 @@
 	<p>Clicking the second button will define destroy, forcing it to throw a warning in the console via console.warn</p>
 	
 	<button type="button" onclick="fun()">Click to fire function</button>
-	<button type="button" onclick="defFn()">Click to define 'destroy'</button>
+	<button type="button" onclick="defFn()">Click to define "destroy"</button>
+	
+	<p>
+		Body source below:
+	</p>
+	
+<xmp>
+<button type="button" onclick="fun()">Click to fire function</button>
+<button type="button" onclick="defFn()">Click to define "destroy"</button>
+
+<script type="text/javascript">
+	function fun(){
+		alert("Alert before error");
+		destroy(); //not defined
+		alert("Alert after error"); //if this alert does not go off, then we need to have a dummy implementation of destroy
+	}
+	
+	function defFn() {
+		destroy = new Function("console.warn(\"Destroy has been deprecated.\");");
+	}
+	
+</script>
+</xmp>
 	
     <script type="text/javascript">
 		function fun(){
 			alert("Alert before error");
 			destroy(); //not defined
-			alert("Alert after error"); //if this alert doesn't go off, then we need to have a dummy implementation of destroy
+			alert("Alert after error"); //if this alert does not go off, then we need to have a dummy implementation of destroy
 		}
 		
 		function defFn() {
-			destroy = new Function('console.warn("Destroy has been deprecated.");');
+			destroy = new Function("console.warn(\"Destroy has been deprecated.\");");
 		}
 		
     </script>
