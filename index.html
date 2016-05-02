@@ -1,27 +1,26 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta "http-equiv"="Content-Security-Policy" content="script-src 'unsafe-inline'">
-		<script src="https://daily.appianci.net/suite/tempo/tempo.nocache.js"></script>
-	</head>
+  <head>
+  </head>
+  <body>
+	<h3>Testing Page</h3>
+	<p>Clicking the first button below will fire a function that shows an alert, then calls the (initially-undefined) 'destroy' method, then shows a second alert</p>
+	<p>Clicking the second button will define destroy, forcing it to throw a warning in the console via console.warn</p>
 	
-	<body id="body">
-		<h1>This is outside of Appian</h1>
-		<p>Appian content can be embedded in external webpages</p>
-		<h3>Appian Action</h3>
-		<iframe srcdoc='
-		<p>testing</p>
-		<appian-action id="testAction" processModelUuid="0002db17-1070-8000-6c1c-010000010000"></appian-action>
-		<script>
-			document.getElementById("testAction").addEventListener("submit", 
-				function(event) {
-					window.alert("Thank you for submitting that form!");
-				});
-			document.getElementById("testAction").addEventListener("error", function(event) {window.alert("Uh oh, something went wrong");});
-			document.getElementById("testAction").addEventListener("dismiss", function(event) {window.alert("Action Dismissed!");});
-		</script>
-		'
-	</body>
+	<button type="button" onclick="fun()">Click to fire function</button>
+	<button type="button" onclick="defFn()">Click to define 'destroy'</button>
+	
+    <script type="text/javascript">
+		function fun(){
+			alert("Alert before error");
+			destroy(); //not defined
+			alert("Alert after error"); //if this alert doesn't go off, then we need to have a dummy implementation of destroy
+		}
+		
+		function defFn() {
+			destroy = new Function('console.warn("Destroy has been deprecated.");');
+		}
+		
+    </script>
+  </body>
 </html>
-
-
-
