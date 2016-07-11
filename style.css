@@ -1,0 +1,699 @@
+/*COLORS:
+#7C6252
+#AE9487
+#D0C7C3
+#FFFFFF
+#B5A598
+#718077
+#3A3B4C
+#D2B487
+#D8DACB
+#A59E84
+#CA8B59
+#525C20 - dark brown
+#907D55 - blue/gray
+#8F965A - light tan
+
+Cristine's Choices:
+#907D55
+#8F965A
+#FFFFFF
+#D2D2CE
+#8F965A
+//
+#8F965A
+#525C20
+#B5B489
+#EAEBE2 - 
+#A1AC72
+*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	/*list-style: none;*/
+
+}
+
+img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #525C20;
+
+}
+
+a:hover {
+	text-decoration: none;
+	color: #525C20;
+}
+
+.more {
+	text-align: right;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+ul {
+	/*list-style-type: none;*/
+	/*margin: 0;
+	padding: 0;*/
+}
+
+li {
+	float: left;
+}
+
+h2, h3, form {
+	font: arial, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	/*color: #FFFFFF;*/
+}
+
+#headline {
+	font: 17px arial, sans-serif;
+	text-shadow: 1px 1px #907D55;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+}
+
+body {
+	background: url(images/edit.png) fixed;
+	padding: 0;
+	margin: 0;
+	font: arial, sans-serif;
+}
+
+#wrapper {
+	font-family: arial, sans-serif;
+	text-align: left;
+	margin: auto;
+	width: 100%; /*900px;*/
+	height: auto;
+	/*background: #FFFFFF;*/
+}
+
+#bodywrap {
+	width: 930px;
+	padding: 10px;
+	margin: auto;
+	background: rgba(200,200,200,.6);
+}
+
+table {
+	text-align: left;
+}
+
+table td th {
+	vertical-align: top;
+}
+
+/*table td a {
+	font-weight: bolder;
+	color: #580000;
+	text-transform: uppercase;
+	text-shadow: 1px 1px #D8DACB;
+	
+}*/
+
+
+
+/*----------------------------------------*/
+
+/*Begin links*/
+
+#links {
+	position: fixed;
+	right: 5px;
+	bottom: 140px;
+	width: 27px;
+	z-index: 10000;
+}
+
+.extra-links {
+	opacity: .6;
+}
+
+.extra-links:hover {
+	opacity: 1;
+}
+
+/*End links*/
+
+/*Begin Logo*/
+	
+#logo {
+	padding-top: 10px;
+	width: 950px;
+	margin: auto;
+}
+
+#logobox {
+	background-color: #f0ffdd
+}
+
+#title {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.titlecomp {
+	display: block;
+	font-family: impact;
+	font-size: 40pt;
+	color: #000000;
+}
+
+#logoimg {
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 100px;
+}
+
+#logo-sidebar {
+	float: right;
+	width: 190px;
+	height: 200px;
+	margin-right: 15px;
+	margin-top: 0px;
+
+}
+
+#certs {
+	width: inherit;
+	vertical-align: top;
+	margin-bottom: 3px;
+	margin-top: 0px;
+	position: relative;
+	z-index: 2;
+	text-align: center;
+}
+
+#connect {
+	vertical-align: bottom;
+	width: inherit;
+	height: 35px;
+	text-align: center;
+	position: absolute;
+}
+
+#donate {
+	text-align: center;
+	position: relative;
+	margin-top: -45px;
+	z-index: 1;
+	color: black;
+	width: inherit;
+
+}
+
+#headanchorcontainer {
+	width: 150px;
+	display: inline-block;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+#headanchorcontainer a {
+	width: 100%;
+	display: inline-flex;
+}
+
+#headanchorcontainer a div {
+	display: inline-flex;
+	margin: auto;
+}
+
+/*Start announcement banner*/
+
+#announcement {
+	width: 100%;
+	height: 30px;
+	margin: auto;
+	font-size: 14pt;
+	text-align: center;
+	background-color: rgba(255,255,255,.4);
+	display: table;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#ann-cell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#ann-x {
+	font-size: 8pt;
+	top: 0;
+	cursor: pointer;
+	display: table-cell;
+	vertical-align: top;
+	color: #444444;
+	padding-top: 2px;
+	padding-right: 5px;
+	font-weight: bolder;
+}
+
+/*End ann banner*/
+
+/*End Logo*/
+
+/*----------------------------------------*/
+
+/*Begin Navigation Bar*/
+
+#navbar {
+	font: 14px arial, sans-serif;
+	font-weight: bolder;
+	height: 45px;
+	text-align: center;
+	padding-top: 5px;
+	background-color: #8F965A;
+	position: relative;
+	z-index: 5000;
+	width: 100%;
+	margin: auto;
+}
+
+#navbar a {
+	color: #EAEBE2;
+	display: block;
+	width: 108px;
+	z-index: 2000;
+	position: relative;
+}
+
+#navbar a:hover {
+	text-decoration: none;
+	color: #EAEBE2;
+}
+ 
+#navbar ul {
+	padding:0;
+	margin:0;
+	list-style: none;
+	z-index: 2000;
+	height: 100%;
+}
+ 
+#navbar ul li {
+	float:left;
+	z-index: 2000;
+	position:relative;
+	width: 20%;
+	height: 100%;
+}
+
+div.menutextcontainer {
+	margin-top: 4px;
+	color: #ffffff;
+}
+
+i.fa {
+	color: #000;
+}
+ 
+#navbar ul li a {
+	padding:4px;
+	z-index: 2000;
+	display:block;
+	text-decoration:none;
+	text-align:center;
+	margin: auto;
+	width: 95%;
+	height: 100%;
+}
+
+#navbar.navbar-stalking {
+	box-shadow: 0px 5px 2px rgba(0,0,0,.25);
+	height: 30px;
+}
+
+#navbar.navbar-stalking ul li a div div {
+	display: none;
+}
+
+#navbar ul li a:hover  i.fa {
+	color: #EAEBE2;
+}
+
+#navbar ul li a:hover  div.menutextcontainer {
+	color: #EAEBE2;
+}
+
+
+#navbar ul li i {
+	padding-left: 8px; /*TODO - find a better fix for the FA alignment issue*/
+}
+
+/*End Navigation Bar*/
+
+/*----------------------------------------*/
+
+#sidebar {
+	text-align: justify;
+	display: inline;
+	margin-top: 20px;
+	width: 195px;
+	height: auto;	
+	/*background: #907d55;
+	background:-moz-linear-gradient(top, #907d55, #ffffff);
+	background:-webkit-linear-gradient(top, #907d55, #ffffff);
+	background:-o-linear-gradient(top, #907d55, #ffffff);
+	background:-ms-linear-gradient(top, #907d55, #ffffff);
+	background:linear-gradient(top, #907d55, #ffffff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#907d55', endColorstr='#ffffff',GradientType=0);
+	*/float: right;
+}
+
+#sidebar img {
+	width: 195px;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.center-text table {
+	text-align: center;
+}
+
+#caption {
+	font-size: 10px;
+	margin: 1px 100px 0px 100px;
+}
+
+.general-content {
+	width: 730px;
+	height: auto;
+	padding: 20px;
+	float: left;
+	text-align: justify;
+	display: inline;
+}
+
+.general-content h1 {
+	font-size: 20px;
+	text-align: center;
+	color: #907D55;
+	text-shadow: 1px 1px #D8DACB;
+	
+}
+
+.general-content h2 {
+	font-size: 16px;
+	text-align: left;
+	color: #907D55;
+	text-shadow: 1px 1px #D8DACB;
+}
+
+/*Content browser style*/
+
+#contentbrowser {
+	display: inline-flex;
+	background-color: #8F965A;
+	height: auto;
+	min-height: 600px;
+	width: 900px;
+}
+
+#contentbrowser div#selectionindicator {
+	background-color: #907d55;
+	width: 130px;
+	height: 16px;
+	margin-bottom: 4px;
+	position: absolute;
+	z-index: 100; /*TODO - make the text lie over this*/
+}
+
+#contentbrowser div#tabcontrols {
+
+}
+
+#contentbrowser div#tabcontrols div.browsingtab {
+	font: 14px arial, sans-serif;
+	font-weight: bolder;
+	color: white;
+	margin-bottom: 4px;
+	cursor: pointer;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 130px;
+	z-index: 200;
+	position: relative;
+}
+
+div#tabcontentcontainer {
+	width: 800px;
+	background-color: #907d55;
+}
+
+div.tabcontent.initialcontenttab {
+	display: block;
+}
+
+div.tabcontent {
+	display: none;
+}
+
+/*Infocard layout*/
+
+.infocard {
+	padding: 5px 15px 5px 15px;
+}
+
+.card {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: inherit;
+	color: #FFFFFF;
+	box-shadow: rgba(0,0,0,.5) 0px 5px 5px 0px;
+}
+
+/*End infocard*/
+
+
+
+/*Begin Row One Home - two columns*/
+
+#row-one {
+	text-align: justify;
+	font: 15px arial, sans-serif;
+	height: 330px;
+	margin-top: 15px;
+
+}
+
+/*Begin slideshow column*/
+
+#row-one-col-one {
+	float: left;
+}
+
+/*End slideshow column*/
+
+#what-we-do {
+	background: #907d55;
+}
+
+#what-we-do p {
+	font: 14px arial, sans-serif;
+	line-height: 25px;
+}
+
+#what-we-do a {
+	font-style: italic;
+	color: #ffffff;
+}
+
+#what-we-do h1 {
+	font-size: 25px;
+	text-shadow: 2px 2px #000000;
+	color: #FFFFFF;
+	font-stretch: narrower;
+}
+
+/*End Row One*/
+
+/*----------------------------------------*/
+
+/*Begin Row Two*/
+
+
+
+/*End Row Two*/
+
+#row-three {
+	margin-top: 15px;
+}
+
+#row-three img {
+	width: 200px;
+	margin-left: 18px;
+}
+
+#row-three p {
+	margin: 30px;
+}
+
+#row-four {
+	width: 550px;
+	height: auto;
+	border-right: solid 1px #D8DACB;
+	padding: 20px;
+	float: left;
+	text-align: justify;
+	display: inline;
+}
+
+#row-four img {
+	position:relative;
+	margin-right: 20px;
+	float:left; }
+
+#activities {
+	display: inline-block;
+	padding-top: 10px;
+	margin-top: -4px;
+	float: left;
+	font: 14px arial, sans-serif;
+	width: 300px;
+	height: 170px;
+	
+}
+
+#activities a {
+	color: #525C20;
+	font-weight: bold;
+	
+}
+
+#activities p {
+	padding: 0px 12px 0px 12px;
+
+}
+
+#news-events {
+	
+	width: 285px;
+	height: 335px;
+	text-align: center;	
+	vertical-align: top;
+	float: right;
+
+}
+
+#news-events p {
+	
+	font-color: #907d55;
+	font: 16px arial, sans-serif;
+}
+
+/*End Row Two*/
+
+/*----------------------------------------*/
+
+/*General Content*/
+
+#content {
+	width: 830px;
+	height: auto;
+	color: #FFFFFF;
+	margin-top: 15px;
+	background-color: #907d55;
+	
+}
+
+#our_horses {
+	width: 900px;
+	height: auto;
+	margin-top: 15px;
+	padding-top:15px;
+	padding-bottom: 15px;
+	background: #ffffff;
+	background:-moz-linear-gradient(left, #ffffff, #907d55);
+	background:-webkit-linear-gradient(left, #ffffff, #907d55);
+	background:-o-linear-gradient(left, #ffffff, #907d55);
+	background:-ms-linear-gradient(left, #ffffff, #907d55);
+	background:linear-gradient(left, #ffffff, #907d55);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#907d55',GradientType=1);
+
+}
+
+
+
+#our_horses table {
+	padding: 3px;
+	line-height: 22px;
+	color: #525C20;
+	font-size: 14px;
+	border: 0px;
+	width: 900px;
+	margin-bottom: 30px;
+}
+	
+#urgent table td{
+	font-size: 16px;
+	margin-top: 10px;
+	vertical-align: middle;
+}
+
+#urgent table{
+	margin-top: 10px;
+
+}
+
+#our_horses table img {
+	width: 250px;
+	vertical-align: top;
+	text-align: left;
+}
+
+#our_horses table a {
+	font-weight: bolder;
+	color: #580000;
+	text-transform: uppercase;
+	text-shadow: 1px 1px #D8DACB;
+}
+
+#our_horses td, th {
+	vertical-align: top;
+}
+
+
+
+
+/*Begin Footer*/
+
+#footer {
+	color: #FFFFFF;
+	font: 11px arial, sans-serif;
+	background-color: #8f965a;
+	padding: 6px 0 5px 0;
+	margin-top: 15px;
+	text-align: center;
+}
+#footer p {
+	margin: 0;
+	padding: 0;
+}
+
+#footer a {
+	color: #ffffff;
+}
+
+/*End Footer*/

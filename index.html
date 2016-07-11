@@ -1,48 +1,615 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-	<h3>Testing Page</h3>
-	<p>Clicking the first button below will fire a function that shows an alert, then calls the (initially-undefined) 'destroy' method, then shows a second alert</p>
-	<p>Clicking the second button will define destroy, forcing it to throw a warning in the console via console.warn</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="google-site-verification" content="DlMT8DNlKCi_Map7u4h3AR7gWzfb5UR4OsdpqE1cPis" />	
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Gentle Giants Draft Horse Rescue is a
+				501(c)(3) Tax Deductible Non-Profit
+				organization. All of our horses are rescued from
+				auctions where we are their last chance before
+				being sold to slaughter.">
+
+	<title>Gentle Giants Draft Horse Rescue</title>
+	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+	<link rel="icon" href="images/ggfavicon.png" type="image/png" sizes="16x16" />
 	
-	<button type="button" onclick="fun()">Click to fire function</button>
-	<button type="button" onclick="defFn()">Click to define "destroy"</button>
+<!--SLIDE SHOW CODE-->
+
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+	<script src="jquery.stalker.js"></script>
 	
-	<p>
-		Body source below:
-	</p>
+	<script>
+		window.onload = function() {
+			jQuery(".stalker").stalker(
+				{
+					"stalkerStyle": "navbar-stalking"
+				}
+			);
+			var obj = jQuery("span#ann-x");
+			obj.on("click", function () {obj.parent().css("display", "none");});
+		}
+	</script>
+
+	<script type="text/javascript" src="fadeslideshow.js">
 	
-<xmp>
-<button type="button" onclick="fun()">Click to fire function</button>
-<button type="button" onclick="defFn()">Click to define "destroy"</button>
+	/***********************************************
+	* Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+	* This notice MUST stay intact for legal use
+	* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+	***********************************************/
+	
+	</script>
+	
+	<script type="text/javascript">
+		/*
+		var mygallery=new fadeSlideShow({
+			wrapperid: "fadeshow1", //ID of blank DIV on page to house Slideshow
+			dimensions: [312, 345], //width/height of gallery in pixels. Should reflect dimensions of largest image
+			imagearray: [
+				["images/slide5.jpg","","",""],
+				["images/slide1.jpg","","",""],
+				["images/slide2.jpg","","",""],
+				["images/slide8.jpg","","",""],
+				["images/slide3.jpg","","",""],
+				["images/slide7.jpg","","",""],
+				["images/slide6.jpg","","",""] //<--no trailing comma after very last image element!
+			],
+			displaymode: {type:'auto', pause:3500, cycles:0, wraparound:false},
+			persist: false, //remember last viewed slide and recall within same session?
+			fadeduration: 1000, //transition duration (milliseconds)
+			descreveal: "ondemand",
+			togglerid: ""
+		})*/
+	
+	</script>
+
+<!--END SLIDESHOW CODE-->
+			
+
+<!--TRACKING CODE-->
 
 <script type="text/javascript">
-	function fun(){
-		alert("Alert before error");
-		destroy(); //not defined
-		alert("Alert after error"); //if this alert does not go off, then we need to have a dummy implementation of destroy
-	}
-	
-	function defFn() {
-		destroy = new Function("console.warn(\"Destroy has been deprecated.\");");
-	}
-	
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36354541-1']);
+  _gaq.push(['_setDomainName', 'gentlegiantsdrafthorserescue.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-</xmp>
+
+<!--END TRACKING CODE-->
+
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 	
-    <script type="text/javascript">
-		function fun(){
-			alert("Alert before error");
-			destroy(); //not defined
-			alert("Alert after error"); //if this alert does not go off, then we need to have a dummy implementation of destroy
-		}
+</head>
+
+<body>
+
+	<div id="links">
+		<form id="paypal-action-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input name="cmd" value="_s-xclick" type="hidden">
+			<input name="hosted_button_id" value="66WGMXF98UHDN" type="hidden">
+			<input class="extra-links" src="images/paypal-logo.png" width="27" name="submit" alt="PayPal - The safer, easier way to pay online!" type="image">
+		</form>
+		<div id="connect">		
+			<a class="extra-links" href="http://saveadraft.blogspot.com/" target="_blank"><img src="images/blogger.png" ,="" height="27px"></a>
+			<a class="extra-links" href="https://www.facebook.com/GentleGiantsDraftHorseRescue" target="_blank"><img src="images/facebook.png" ,="" height="27px"></a>
+			<a class="extra-links" href="http://twitter.com/#!/GentleGiantsDHR" target="_blank"><img src="images/twitter.png" ,="" height="27px"></a>
+			<a class="extra-links" href="http://www.youtube.com/user/Gentlegiantsdrafts?feature=watch" target="_blank"><img src="images/youtube.jpg" ,="" height="27px"></a>
+		</div>
+	</div>
+	
+	<div id="wrapper">
 		
-		function defFn() {
-			destroy = new Function("console.warn(\"Destroy has been deprecated.\");");
-		}
+		<!--Begin Header-->
 		
-    </script>
-  </body>
+		<div id="logobox">
+			<div id="logo">
+				<div id="headanchorcontainer">
+					<a href="index.html">
+						<div>
+							<div id="GG" class="titlecomp">
+								Gentle Giants
+							</div>
+							<img src="images/logo-plain.png" id="logoimg" alt="Gentle Giants Logo">
+							<div id="DHR" class="titlecomp">
+								Draft Horse Rescue
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!--End Header-->
+		
+		<div class="clear">
+			
+		</div>
+		
+		
+		
+		<!--Begin Navigation Bar-->
+			
+		<div id="navbar" class="stalker">
+
+			<ul>
+				<li>
+					<a href="helping.html">
+						<div>
+							<i class="fa fa-lg fa-users"></i>
+							<div class="menutextcontainer">
+								Supporting the Rescue
+							</div>
+						</div>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<div>
+							<i class="fa fa-lg fa-home"></i>
+							<div class="menutextcontainer">
+								Horses for Adoption
+							</div>
+						</div>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<div>
+							<i class="fa fa-lg fa-book"></i>
+							<div class="menutextcontainer">
+								Education
+							</div>
+						</div>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<div>
+							<i class="fa fa-lg fa-calendar-o"></i>
+							<div class="menutextcontainer">
+								Events/Media
+							</div>
+						</div>
+					</a>
+				</li>
+				
+				<li>
+					
+					<a href="contact.html">
+						<div>
+							<i class="fa fa-lg fa-envelope-o"></i>
+							<div class="menutextcontainer">
+								Contact
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+		
+		<!--End Navigation Bar-->
+		
+		<div id="bodywrap">
+		
+		<div id="announcement">
+			<span id="ann-cell">
+				This is an announcement - I've included details as well!
+			</span>
+			<span id="ann-x">
+				X
+			</span>
+		</div>
+			
+		<!-- <table width="900" bgcolor="#FFFFFF" padding="0">
+			<tr>
+				<td>
+					<center><img src="ggdhr_open_house.jpg" width="600"></center>
+
+			</table>
+                 -->
+
+			
+		<!--Begin Razoo Widget-->	
+			
+			<!--
+			<div id='razoo_donation_widget'><span> <a
+			href="http://www.razoo.com/story/Gentle-Giants-Draft-Horse-Rescue-Society-Ltd"><img
+			src="images/wearehungry.jpg" width="900"></a>
+			
+			<a
+			href="http://www.razoo.com/story/Gentle-Giants-Draft-Horse-Rescue-Society-Ltd">Click
+			to donate to GENTLE GIANTS DRAFT HORSE RESCUE SOCIETY
+			LTD</a> at <a
+			href="http://www.razoo.com/">Razoo</a></span></div>
+			
+			<script type='text/javascript'>
+				var r_protocol = (("https:"==document.location.protocol)?"https://":"http://");
+				var r_path = 'www.razoo.com/javascripts/widget_loader.js';
+				var r_identifier = 'Gentle-Giants-Draft-Horse-Rescue-Society-Ltd';
+				document.write(unescape("%3Cscript id='razoo_widget_loader_script' src='" 
+					+ r_protocol 
+					+ r_path 
+					+ "'type='text/javascript'%3E%3C/script%3E"));
+			</script>-->
+			
+		<!--End Razoo Widget-->
+			
+			
+	<!-- This paragraph appears before the slide show.		
+			<a href="http://kjdouble.wix.com/thundering-hooves-5k"><center><h4>Thundering Hooves 5K 2015<BR>
+			    <em>Run or walk your way with us at Thundering Hooves 5K 2015!</em><BR>
+                            Oct 24, 2015 3:00pm Packet pickup<BR>
+                            Our Fall run is Theme race for Halloween!<BR>
+                            Click here for further details!</a></center></h4>
+			
+                -->           
+			
+		<!--Begin Christmas Promotion -->
+			
+		<!--<table width="900" bgcolor="#FFFFFF" padding="0">
+			<tr>
+				<td>
+					<img src="images/xmaslogo.jpg" width="600">
+				</td>
+				<td>
+		<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="T66W6T3LRGNHG">
+			<table>
+			<tr><td><input type="hidden" name="on0" value="Donate a Special Gift:">Donate a Special Gift:</td></tr><tr><td><select name="os0">
+				<option value="3 pound bag of apples:">3 pound bag of apples: $5.00 USD</option>
+				<option value="Two square bales of hay:">Two square bales of hay: $15.00 USD</option>
+				<option value="Bag of grain:">Bag of grain: $20.00 USD</option>
+				<option value="Large round bale of hay:">Large round bale of hay: $50.00 USD</option>
+				<option value="Full vetting for a horse:">Full vetting for a horse: $100.00 USD</option>
+			</select> </td></tr>
+			</table>
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+		</td>
+				
+			</tr>
+		</table> -->
+		
+		<!--End Christmas Promotion-->
+			
+		<!--Begin Page Body-->
+		
+		<div>
+			
+		</div>
+		
+		<div id="what-we-do" class="card infocard">
+
+			<h1>What We Do</h1>
+			
+			<p>
+				Gentle Giants is dedicated to rescuing horses at risk of 
+				being auctioned to <a href="horseslaughter.html">slaughter</a>. 
+				We endeavour to find loving, lasting homes for every animal that
+				comes through our gates, evaluating and pairing each horse
+				with an ideal owner to forge unshakable relationships. 
+				Please check our <a href="availablehorses.html">Available Horses</a>
+				page to see if your perfect match is there, or make a <a href="TODO-Donationslink">tax free donation</a>
+				to help advance our mission!
+			</p>
+
+		</div>
+		
+		<div id="row-two" class="card">
+
+			<!--Begin Old Video-->
+			
+			<!--<iframe width="595" height="335" src="http://www.youtube.com/embed/aSLSozrGd7g?autoplay=1" frameborder="3" allowfullscreen></iframe>-->
+
+			<!--End Old Video-->
+
+			<!--Begin New Video-->
+
+			<iframe width="930" height="523" src="https://www.youtube.com/embed/3Wo5JvPbkDE?autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+			<!--Begin New Video-->
+			
+		</div>
+		
+		<div id="contentbrowser" class="card infocard">
+			<div id="selectionindicator">
+				
+			</div>
+			
+			<div id="tabcontrols">
+				<div class="browsingtab" ind="0">
+					Our Mission
+				</div>
+				<div class="browsingtab" ind="1">
+					The Farm
+				</div>
+				<div class="browsingtab" ind="2">
+					People
+				</div>
+			</div>
+			
+			<div id="tabcontentcontainer">
+				<div id="0" class="tabcontent initialcontenttab">
+				
+					<div class="general-content">
+						<div class="center-text">
+							
+							<p><em>Gentle Giants Draft Horse Rescue
+							was formed to facilitate the rescue of
+							Draft<br>and Draft Cross horses from
+							slaughter, abuse, and neglect.</em></p>
+							
+						</div>
+					
+						<p>GGDHR promotes the benefits and uses of Draft
+						horses of all breeds as trail mounts, schooling
+						mounts, and competition mounts. We educate the
+						public through the use of brochures, pamphlets,
+						and public presentations on the topics of: horse
+						slaughter and cruelty, the responsibilities of
+						horse ownership, the over-population and
+						over-breeding of horses, and how over-breeding
+						contributes to the horse slaughter industry.</p>
+						
+						<p>Slaughter is a highly profitable market and
+						most of the public is unaware that the buyers
+						for the slaughterhouses frequent public auctions
+						to purchase their horses. We attend the same
+						public auctions, choose the Draft horses we feel
+						are the most viable candidates for rescue, and
+						then outbid the meat buyer. 
+
+						<br><br>We transport the
+						horses to our facility, where the horses are
+						quarantined for a minimum of 21 days for
+						illness. During that time, we begin to evaluate
+						each individual horse and learn its personality
+						and training level on the ground and under
+						saddle. We ride the horses under many different
+						circumstances, and evaluate for what level of
+						rider the horse would best be suited. During
+						this time, the horse also receives any necessary
+						veterinary care, farrier care, dental care, and
+						training. 
+
+						<br><br>When the horses have completed their
+						quarantine, they are available to be placed into
+						adoptive homes under a strict contract. The
+						horses are advertised on our website and on the
+						internet to help find suitable adoptive homes.
+						Each horse is evaluated with its prospective
+						adopter, and if we feel the horse and rider are
+						a suitable match for one another, then the
+						adopter may apply to adopt that horse. At that
+						time, GGDHR would perform a background and
+						reference check, and may at times also conduct
+						home visits, if deemed necessary.</p>
+						
+						<p>GGDHR is primarily funded by adoption fees,
+						private donations, and sponsorships which
+						facilitate the rescue of future draft horses
+						from slaughter.</p>
+						
+					</div>
+				</div>
+				
+				
+				<div id="1" class="tabcontent">
+					<div class="general-content">
+						<div id="center-text">
+							
+							<p><strong>We are located at 17250 Old Frederick Road,
+							Mount Airy Maryland 21771.<br>Click <a href="https://maps.google.com/maps?q=17250+Old+Frederick+Road,+Mount+Airy+MD+21771&amp;daddr=17250+Old+Frederick+Rd,+Mt+Airy,+MD+21771&amp;hnear=17250+Old+Frederick+Rd,+Mt+Airy,+Maryland+21771&amp;gl=us&amp;t=m&amp;geocode=%3BCUIEQXkudu4zFdp1WAIdeVhn-yllOFeOBSzIiTGoJm-EJkC8Yg&amp;z=14">here</a>
+							for directions to the farm!</strong></p>
+							
+							<p>Please note that we are volunteer-run and therefore are open
+							<strong>by appointment only</strong>.<br>Click <a href="mailto:GentleGiantsDHR@gmail.com">here</a> to
+							schedule a visit! </p>
+							
+						</div>
+						
+						<img src="images/newfarm.jpg">
+							
+						<h1>Gentle Giants Barn Rules</h1>
+						
+						<a name="barnRules">&nbsp;</a>
+							
+							<ol>
+								
+								<li>All riders must have long pants, and closed toed
+								heeled boots or riding shoes. No riding is permitted in
+								shorts or tennis shoes. </li><br>
+										
+								<li>Allow enough time to groom, tack, and untack your
+								horse. Our volunteers will be there to help with
+								anything should you have a problem or question, but we
+								do want to see how you interact with and handle the
+								adoptive horse.</li><br>
+								
+								<li>Please do not bring children with you to your
+								appointment, unless the adoptive horse is intended for
+								the child. If you are bringing a guest, please let us
+								know in advance.</li><br>
+								
+								<li>No one shall go into the pastures without the assistance and 
+												invitation of a staff member.</li><br>
+								
+								<li>All riders must wear a helmet when mounted. We can provide a
+								helmet for you if you do not have one.</li><br>
+								
+								<li>No smoking in the barn.</li><br>
+								
+								<li>Please do not bring pets to the farm. Our dogs
+								unfortunately do not enjoy sharing their space!</li><br>
+								
+							</ol>
+						
+						</div>	
+				</div>
+				
+				<div id="2" class="tabcontent">
+					<div class="general-content">
+						
+						<table cellspacing="10px">
+							
+							<tbody><tr>
+								<td><img src="images/christine_twister.jpg" width="200"></td>
+								
+								<td>
+								<strong>Christine Hajek, President and Founder of Gentle Giants</strong>
+								
+								<p>Christine handles all inquiries and appointments for the
+								available horses.  She is the proud adopter of Fiona and Twister.</p>
+								
+								<p>You can reach Christine at
+								<a href="mailto:info@gentlegiantsdrafthorserescue.com">info@gentlegiantsdrafthorserescue.com</a> </p>
+								</td>
+							</tr>
+							
+							
+							
+							<tr>
+								<td><img src="images/jamie.jpg" width="200"></td>
+								
+								<td>
+								<strong>Jamie McIntosh, Secretary</strong>
+								
+								<p>You can reach Jamie at
+								<a href="mailto:donations@gentlegiantsdrafthorserescue.com">donations@gentlegiantsdrafthorserescue.com</a><br>
+								or by calling 443-463-7084</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><img src="images/kelly.jpg" width="200"></td>
+								
+								<td>
+								<strong>Kelly Double, Member - Board of Directors</strong>
+								
+								<p>Kelly serves on the Board of Directors
+								and also volunteers his time and
+								expertise training some of the more
+								difficult horses who enter the
+								rescue.</p>
+								
+								<p>You can reach Kelly at
+								<a href="mailto:Kelly@gentlegiantsdrafthorserescue.com">Kelly@gentlegiantsdrafthorserescue.com</a>
+								<br>Kelly is also the proud adopter of Abby!</p>
+								</td>
+							</tr>
+						
+						</tbody></table>
+					
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div>
+		
+		</div>
+
+		<div class="clear">
+
+		</div>
+		
+		<div id="row-one">
+			
+			<div id="row-one-col-one">
+				
+				<!--div id="fadeshow1">
+					
+				</div-->
+				
+			</div>
+			
+			<div id="news-events">
+
+				<div id="headline">
+				<br />
+				<a href="events.html">UPCOMING EVENTS</a></div>
+				
+				<!--Begin Events List
+				
+				<p><strong>Thundering Hooves 5K</strong><br>
+                                           May 7, 2016</p>-->
+                                <!--End Events List-->
+				
+				<!--<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ggdhrcalendar%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="285" height="315" frameborder="0" scrolling="no"></iframe>
+				-->					
+			</div>
+
+		</div>
+		
+		<div class="clear">
+
+		</div>
+		
+		<div id="row-four">
+		
+		<a href="http://www.farmerscoop.com/" target="_blank"><img src="images/FCA_b&w.jpg", height="80px"></a>
+		
+		<p>Gentle Giants is proud to be sponsored by the<br />Farmers
+		Cooperative Association, who make<br />all of our feed from
+		locally raised grains.</p>
+		
+		
+		</div>
+		
+		<!--End Page Body-->
+			
+		
+		
+		<div class="clear">
+
+		</div>
+		
+		<!--Begin Footer-->
+		
+
+		<div id="footer">
+
+			<p><a href="index.html">Gentle Giants Draft Horse Rescue</a></p>
+			<a href="https://maps.google.com/maps?q=17250+Old+Frederick+Road,+Mount+Airy+MD+21771&hnear=17250+Old+Frederick+Rd,+Mt+Airy,+Maryland+21771&gl=us&t=h&z=16"><p>17250 Old Frederick Road - Mount Airy MD 21771</p></a>
+			<p>&copy; 2012 all rights reserved.</p>
+					
+		</div>
+		
+		<!--End Footer-->
+
+				
+		</div> <!--ends bodywrap-->
+		
+	</div>
+	
+	<script>
+		jQuery(".browsingtab").on("click", function(event) {
+			var index = event.target.getAttribute("ind");
+			var newPosition = "" + (20*index) + "px 0px 0px 0px";
+			jQuery("#selectionindicator").animate({margin: newPosition}, 150);
+			jQuery(".tabcontent").hide();
+			jQuery("div.tabcontent#" + index).show(250);
+		});
+	</script>
+	
+</body>
+
 </html>
