@@ -31,6 +31,7 @@ Cristine's Choices:
 html, body {
 	margin: 0;
 	padding: 0;
+	font-size: 14pt;
 	/*list-style: none;*/
 
 }
@@ -397,7 +398,6 @@ i.fa {
 }
 
 .general-content {
-	width: 730px;
 	height: auto;
 	padding: 20px;
 	float: left;
@@ -428,19 +428,22 @@ i.fa {
 	height: auto;
 	min-height: 600px;
 	width: 900px;
+	display: flex;
 }
 
 #contentbrowser div#selectionindicator {
 	background-color: #907d55;
-	width: 130px;
-	height: 16px;
-	margin-bottom: 4px;
-	position: absolute;
-	z-index: 100; /*TODO - make the text lie over this*/
+	width: 33.3%;
+	height: 2px;
+	position: relative;
+	z-index: 100; /*TODO - make the text lie over this?*/
 }
 
 #contentbrowser div#tabcontrols {
-
+	margin: 0px auto 0px auto;
+	width: 100%;
+	height: 1.4rem;
+	display: inline-flex;
 }
 
 #contentbrowser div#tabcontrols div.browsingtab {
@@ -452,14 +455,15 @@ i.fa {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	width: 130px;
+	width: 33.3%;
 	z-index: 200;
 	position: relative;
+	text-align: center;
+	font-size: 1rem;
 }
 
 div#tabcontentcontainer {
-	width: 800px;
-	background-color: #907d55;
+	width: 100%;
 }
 
 div.tabcontent.initialcontenttab {
