@@ -1,0 +1,67 @@
+<html>
+
+	<head>
+		<style>
+			div#slideshowdiv1 {
+				display: relative;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+			}
+			
+			div#slideshowdiv1 > div {
+				position: relative;
+				width: 50%; /*issues here*/
+				height: 50%;
+				margin: auto;
+				background-color: gray;
+			}
+			
+			img.slideshow1image {
+				position: absolute;
+				width: auto;
+				height: auto;
+				margin: auto;
+				max-height: 100%;
+				max-width: 100%;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+		</style>
+		
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		
+		<div id="slideshowdiv1">
+			<div>
+				<img class="slideshow1image" src="images/slide5.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide1.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide2.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide8.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide3.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide7.jpg"></img>
+				<img style="display: none" class="slideshow1image" src="images/slide6.jpg"></img>
+			</div>
+		</div>
+		
+		<script>
+			const slideshow1images = document.getElementsByClassName("slideshow1image");
+			const PIC_COUNT = slideshow1images.length;
+			function transition(currentIndex) {
+				var nextIndex = (currentIndex + 1) % PIC_COUNT;
+				var nextObject = slideshow1images[nextIndex];
+				var currentObject = slideshow1images[currentIndex];
+				$(nextObject).fadeIn(2000);
+				$(currentObject).fadeOut(2000);
+				setTimeout(function() {transition(nextIndex);}, 5000);
+			}
+			setTimeout(function() {transition(0);}, 5000);
+		</script>
+		
+	</body>
+
+</html>

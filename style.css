@@ -90,10 +90,11 @@ h2, h3, form {
 }
 
 body {
-	background: url(images/watermark.png) fixed;
+	/*background: url(images/watermark.png) fixed;
 	background-position-x: -82%;
 	background-position-y: -130%;
 	background-repeat: no-repeat;
+	background-color: linen;*/
 	background-color: linen;
 	padding: 0;
 	margin: 0;
@@ -110,10 +111,11 @@ body {
 }
 
 #bodywrap {
-	width: 930px;
+	width: 90%;
+	max-width: 1200px;
 	padding: 10px;
 	margin: auto;
-	background: rgba(200,200,200,.6);
+	/*background: rgba(200,200,200,.6);*/
 }
 
 table {
@@ -160,12 +162,21 @@ table td th {
 	
 #logo {
 	padding-top: 10px;
-	width: 950px;
+	width: 95%;
+	max-width: 1200px;
 	margin: auto;
 }
 
 #logobox {
-	background-color: #f0ffdd
+	/*background-color: #f0ffdd*/
+	background: url('images/bannerDrivewayHorses.jpg');
+	background-size: cover;
+	height: 500px;
+}
+
+div#headerContainer {
+	background: rgba(255,255,255,.4);
+	box-shadow: 0px 0px 20px 20px rgba(255,255,255,.4);
 }
 
 #title {
@@ -176,14 +187,14 @@ table td th {
 .titlecomp {
 	display: block;
 	font-family: impact;
-	font-size: 40pt;
+	font-size: 4vw;
 	color: #000000;
 }
 
 #logoimg {
 	margin-left: 20px;
 	margin-right: 20px;
-	height: 100px;
+	height: 7vw;
 }
 
 #logo-sidebar {
@@ -318,7 +329,7 @@ table td th {
 	float:left;
 	z-index: 2000;
 	position:relative;
-	width: 20%;
+	width: 16.6%;
 	height: 100%;
 }
 
@@ -521,7 +532,56 @@ div#locationAndContact > div {
 
 /*End infocard*/
 
+.slide {
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 0;
+	padding-top: 31.465%;
+	position: relative;
+}
 
+.slide > div {
+	position: absolute;
+}
+
+.slideInfo {
+	background-color: rgba(200,200,200,.5);
+	font-weight: bold;
+	padding: .5rem;
+}
+
+.slideInfo > div {
+	font-size: .8rem;
+}
+
+.slide1 {
+	background-image: url("images/slide_abouttherescue.jpg");
+}
+
+.slide1 > div {
+	top: 25%;
+	left: 55%;
+	right: 5%;
+}
+
+/*Gallery card -- gcright has the gallery on the right*/
+
+.gallerycardright {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 15px;
+}
+
+.gallerycardleft {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 15px;
+}
+
+/*End Gallecry card*/
 
 /*Begin Row One Home - two columns*/
 
@@ -539,10 +599,44 @@ div#locationAndContact > div {
 	float: left;
 }
 
+div#slideshowdiv1 {
+	width: 312px;
+	height: 345px;
+	margin: auto;
+	display: inline-block;
+}
+
+div#slideshowdiv1 > div {
+	position: relative;
+	width: 100%; /*issues here*/
+	height: 100%;
+	background-color: gray;
+}
+
+img.slideshow1image {
+	position: absolute;
+	width: auto;
+	height: auto;
+	margin: auto;
+	max-height: 100%;
+	max-width: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
 /*End slideshow column*/
 
 #what-we-do {
-	background: #907d55;
+	/*background: #907d55;
+	max-height: 345px;*/
+	position: relative;
+}
+
+#what-we-do img {
+	width: 100%;
+	position: relative;
 }
 
 #what-we-do p {
@@ -557,9 +651,18 @@ div#locationAndContact > div {
 
 #what-we-do h1 {
 	font-size: 25px;
-	text-shadow: 2px 2px #000000;
 	color: #FFFFFF;
 	font-stretch: narrower;
+}
+
+#whatWeDoText {
+	position: absolute;
+	display: inline;
+	margin: 1rem;
+}
+
+#showContainer {
+	display: inline-block;
 }
 
 /*End Row One*/
