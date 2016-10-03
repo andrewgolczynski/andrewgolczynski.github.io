@@ -271,16 +271,25 @@
 			
 		<!--Begin Page Body-->
 		
-		<div class="card slide slide1">
-			<div class="slideInfo">
-				Gentle Giants Draft Horse Rescue was formed to facilitate the rescue of draft and draft cross horses from slaughter, abuse, and neglect.
-				<br></br>
-				<div>
-					Click here to learn who we are, and how we rescue, rehabilitate, retrain, and rehome our horses.
+		<div id="slides">
+		
+			<div class="card slide slide1">
+				<div class="slideInfo">
+					Gentle Giants Draft Horse Rescue was formed to facilitate the rescue of draft and draft cross horses from slaughter, abuse, and neglect.
+					<br></br>
+					<div>
+						Click here to learn who we are, and how we rescue, rehabilitate, retrain, and rehome our horses.
+					</div>
 				</div>
 			</div>
-		</div>
+			
+			<div class="card slide slide2" style="display: none">
+				<div class="slideInfo">
+					Testing
+				</div>
+			</div>
 		
+		</div>
 		
 		<!--
 		<div id="what-we-do" class="card gallerycardleft">
@@ -398,7 +407,8 @@
 	</script>
 	
 	<script>
-		const slideshow1images = document.getElementsByClassName("slideshow1image");
+		/*const slideshow1images = document.getElementsByClassName("slideshow1image");*/
+		const slideshow1images = document.getElementsByClassName("slide");
 		const PIC_COUNT = slideshow1images.length;
 		function transition(currentIndex) {
 			var nextIndex = (currentIndex + 1) % PIC_COUNT;
@@ -406,9 +416,9 @@
 			var currentObject = slideshow1images[currentIndex];
 			jQuery(nextObject).fadeIn(2000);
 			jQuery(currentObject).fadeOut(2000);
-			setTimeout(function() {transition(nextIndex);}, 5000);
+			setTimeout(function() {transition(nextIndex);}, 7500);
 		}
-		setTimeout(function() {transition(0);}, 5000);
+		setTimeout(function() {transition(0);}, 7500);
 	</script>
 	
 </body>
