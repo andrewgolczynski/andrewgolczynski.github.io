@@ -171,7 +171,7 @@ table td th {
 	/*background-color: #f0ffdd*/
 	background: url('images/bannerDrivewayHorses.jpg');
 	background-size: cover;
-	height: 500px;
+	height: 40vw;
 }
 
 div#headerContainer {
@@ -295,6 +295,7 @@ div#headerContainer {
 	font: 14px arial, sans-serif;
 	font-weight: bolder;
 	height: 45px;
+	/*overflow: overlay;*/
 	text-align: center;
 	padding-top: 5px;
 	background-color: #8F965A;
@@ -532,13 +533,19 @@ div#locationAndContact > div {
 
 /*End infocard*/
 
+div#slides {
+	position: relative;
+	width: 100%;
+	padding-bottom: 31.465%;
+}
+
 .slide {
 	width: 100%;
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 0;
 	padding-top: 31.465%;
-	position: relative;
+	position: absolute;
 }
 
 .slide > div {
@@ -563,6 +570,16 @@ div#locationAndContact > div {
 	top: 25%;
 	left: 55%;
 	right: 5%;
+}
+
+.slide2 {
+	background-image: url("images/slide_donate.jpg");
+}
+
+.slide2 > div {
+		top: 25%;
+		left: 55%;
+		right: 5%;
 }
 
 /*Gallery card -- gcright has the gallery on the right*/
