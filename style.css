@@ -175,8 +175,9 @@ table td th {
 }
 
 div#headerContainer {
-	background: rgba(255,255,255,.4);
-	box-shadow: 0px 0px 20px 20px rgba(255,255,255,.4);
+	background: rgba(150,150,150,.6);
+	margin-top: 1rem;
+	padding: 1rem;
 }
 
 #title {
@@ -533,6 +534,61 @@ div#locationAndContact > div {
 
 /*End infocard*/
 
+/*Section Layout*/
+
+.section {
+	margin-top: 2rem;
+	width: 100%;
+}
+
+.sectionTitle {
+	text-align: center;
+	font-size: 1.4rem;
+	color: black;
+	font-weight: bolder;
+	padding-bottom: .5rem;
+}
+
+/*End Section Layout*/
+
+/*Events layout*/
+
+.eventContainer {
+	border-width: 2px 0px 0px 0px;
+	border-color: rgb(220,220,220);
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+	border-style: solid;
+}
+
+.eventTitle {
+	font-size: 1.1rem;
+	padding-bottom: .5rem;
+}
+
+.eventDescription {
+	width: 90%;
+	margin: auto;
+}
+
+/*End events layout*/
+
+/*Attribution*/
+
+.attribution {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.attribution > p {
+	display: inline-block;
+	margin: 0rem 0rem 0rem 1rem;
+}
+
+/*End attribution*/
+
+
 div#slides {
 	position: relative;
 	width: 100%;
@@ -577,9 +633,9 @@ div#slides {
 }
 
 .slide2 > div {
-		top: 25%;
-		left: 55%;
-		right: 5%;
+	top: 25%;
+	left: 55%;
+	right: 5%;
 }
 
 /*Gallery card -- gcright has the gallery on the right*/
