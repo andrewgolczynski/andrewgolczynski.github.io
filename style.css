@@ -163,6 +163,7 @@ table td th {
 #logo {
 	padding-top: 10px;
 	width: 95%;
+	min-width: 100%;
 	max-width: 1200px;
 	margin: auto;
 }
@@ -576,13 +577,13 @@ div#locationAndContact > div {
 /*Attribution*/
 
 .attribution {
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
+	text-align: center;
+	width: 100%;
 }
 
 .attribution > p {
 	display: inline-block;
+	vertical-align: super; /*kinda aligns the p tag vertically, but needs tweaking - try moving the text into its own div?*/
 	margin: 0rem 0rem 0rem 1rem;
 }
 
