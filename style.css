@@ -70,7 +70,8 @@ ul {
 }
 
 li {
-	float: left;
+	/*float: left;*/
+	padding: 2px 0px 2px 0px;
 }
 
 h2, h3, form {
@@ -375,7 +376,7 @@ i.fa {
 
 
 #navbar ul li i {
-	padding-left: 8px; /*TODO - find a better fix for the FA alignment issue*/
+	
 }
 
 /*End Navigation Bar*/
@@ -491,10 +492,12 @@ div.tabcontent {
 
 div.videoContainer {
 	position: relative;
-	padding-bottom: 52.8%;
-	padding-top: 30px;
+	padding-bottom: 40.1%;
+	padding-top: 25px;
 	height: 0;
 	overflow: hidden;
+	margin: auto;
+	width: 75%;
 }
 
 div.videoContainer > iframe {
