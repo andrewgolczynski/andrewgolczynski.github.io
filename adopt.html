@@ -2,11 +2,9 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-	<meta name="google-site-verification" content="DlMT8DNlKCi_Map7u4h3AR7gWzfb5UR4OsdpqE1cPis" />	
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="google-site-verification" content="DlMT8DNlKCi_Map7u4h3AR7gWzfb5UR4OsdpqE1cPis" />	
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="description" content="Gentle Giants Draft Horse Rescue is a
 				501(c)(3) Tax Deductible Non-Profit
 				organization. All of our horses are rescued from
@@ -32,6 +30,16 @@
 			var obj = jQuery("span#ann-x");
 			obj.on("click", function () {obj.parent().css("display", "none");});
 		}
+	</script>
+
+	<script type="text/javascript" src="fadeslideshow.js">
+	
+	/***********************************************
+	* Ultimate Fade In Slideshow v2.0- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+	* This notice MUST stay intact for legal use
+	* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+	***********************************************/
+	
 	</script>
 
 <!--END SLIDESHOW CODE-->
@@ -135,7 +143,7 @@
 				</li>
 				
 				<li>
-					<a href="adopt.html">
+					<a href="#">
 						<div>
 							<i class="fa fa-lg fa-home"></i>
 							<div class="menutextcontainer">
@@ -185,101 +193,43 @@
 		<!--End Navigation Bar-->
 		
 		<div id="bodywrap">
-		
-			<div id="announcement">
-				<span id="ann-cell">
-					This is an announcement - I've included details as well!
-				</span>
-				<span id="ann-x">
-					X
-				</span>
-			</div>
-		
-		<div id="slides">
-		
-			<div class="slideContainer">
-				<div class="card slide slide1">
-					
-				</div>
-				<div class="slideInfo">
-					Gentle Giants Draft Horse Rescue was formed to facilitate the rescue of draft and draft cross horses from slaughter, abuse, and neglect.
-					<br></br>
-					<div>
-						Click here to learn who we are, and how we rescue, rehabilitate, retrain, and rehome our horses.
-					</div>
-				</div>
-			</div>
 			
-			<div class="slideContainer">
-				<div class="card slide slide2">
-					
-				</div>
-				<div class="slideInfo">
-					More information here.
-				</div>
-			</div>
-			
-			<div class="slideContainer">
-				<div class="card slide slide2">
-					
-				</div>
-				<div class="slideInfo">
-					More information here.
-				</div>
-			</div>
+		<!--Begin Page Body-->
 		
+		<div>
+			
 		</div>
-
-		<div class="clear">
-
-		</div>
+		
+		<!-- sections go here-->
 		
 		<div class="section">
 			
 			<div class="sectionTitle">
-				Upcoming Events
+				Donating to Gentle Giants
 			</div>
 			
-			<div class="eventContainer">
-				<div class="eventTitle">
-					Thundering Hooves 5k
+			<div class="collapsibleContainer">
+				<div class="collapsibleTitle">
+				
 				</div>
-			
-				<div class="eventDescription">
-					This is a description of the 5k.  It goes here.  Wooo.  Hooo.
-				</div>
-			</div>
-			
-			<div class="eventContainer">
-				<div class="eventTitle">
-					This here is event number two
-				</div>
-			
-				<div class="eventDescription">
-					A second description.  All events in this feed are filed into objects with titles and descriptions.  We display the events as such.
+				
+				<div class="collapsibleBody">
+				
 				</div>
 			</div>
+			
+		</div>
+		
+		<div>
+		
+		</div>
+
+		<div class="clear">
 
 		</div>
 		
 		<div class="clear">
 
-		</div>
-		
-		<div class="section attribution">
-		
-			<a href="http://www.farmerscoop.com/" target="_blank">
-				<img src="images/FCA_b&w.jpg", height="80px">
-			</a>
-		
-			<p>
-				Gentle Giants is proud to be sponsored by the
-				<br />
-				Farmers Cooperative Association, who make
-				<br />
-				all of our feed from locally raised grains.
-			</p>
-		
 		</div>
 		
 		<!--End Page Body-->
@@ -308,20 +258,16 @@
 		
 	</div>
 	
-	<!--script>
-		/*const slideshow1images = document.getElementsByClassName("slideshow1image");*/
-		const slideshow1images = document.getElementsByClassName("slide");
-		const PIC_COUNT = slideshow1images.length;
-		function transition(currentIndex) {
-			var nextIndex = (currentIndex + 1) % PIC_COUNT;
-			var nextObject = slideshow1images[nextIndex];
-			var currentObject = slideshow1images[currentIndex];
-			jQuery(nextObject).fadeIn(2000);
-			jQuery(currentObject).fadeOut(2000);
-			setTimeout(function() {transition(nextIndex);}, 7500);
-		}
-		setTimeout(function() {transition(0);}, 7500);
-	</script-->
+	<script>
+		jQuery(".browsingtab").on("click", function(event) {
+			var index = event.target.getAttribute("ind");
+			var newPosition = "" + (20*index) + "px 0px 0px 0px";
+			var newPosition = "" + (33.3*index) + "%";
+			jQuery("#selectionindicator").animate({left: newPosition}, 150);
+			jQuery(".tabcontent").hide();
+			jQuery("div.tabcontent#" + index).show();
+		});
+	</script>
 	
 </body>
 
