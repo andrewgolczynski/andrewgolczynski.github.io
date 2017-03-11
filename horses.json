@@ -1,0 +1,48 @@
+{
+	"horses": [
+		{
+			"Name": "",
+			"birthYear": "",
+			"Height": "",
+			"Sex": "",
+			"Suitable For": "",
+			"Limitations/Maintenance": "",
+			"Adoption Fee": "",
+			"Personality": "",
+			"images": [],
+			"In Rehabilitation For": "",
+			"sponsors": [],
+			"show": "true"
+		},
+		{
+			"Name": "Atticus",
+			"birthYear": "2003",
+			"Height": "17 hands",
+			"Sex": "Belgian Gelding",
+			"Suitable For": "Walk/trot/canter English or Western for an upper intermediate rider",
+			"Limitations/Maintenance": "Squamous cell carcinoma survivor missing left eye",
+			"Adoption Fee": "$800",
+			"Personality": "Atticus can be a little pushy due to nerves, but is not hard to manage. He is very athletic and would make a great dressage mount. He is schooling walk to canter transitions and walk pirouettes. He is good on trail with company.",
+			"images": [
+				"adopt_atticus1.jpg"
+			],
+			"In Rehabilitation For": "",
+			"sponsors": [],
+			"show": "false"
+		},
+		{
+			"Name": "Autumn",
+			"Age": "2004",
+			"Height": "",
+			"Sex": "",
+			"Suitable For": "",
+			"Limitations/Maintenance": "",
+			"Adoption Fee": "",
+			"Personality": "",
+			"images": [],
+			"In Rehabilitation For": "",
+			"sponsors": [],
+			"show": "true"
+		},
+	]
+}

@@ -596,16 +596,36 @@ div#locationAndContact > div {
 div#slides {
 	position: relative;
 	width: 100%;
-	padding-bottom: 31.465%;
+	/*padding-bottom: 31.465%;*/
+	  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.slideContainer {
+	width: 380px;
+	margin-right: 5px;
+	margin-left: 5px;
+	position: relative;
+	display: inline-table;
 }
 
 .slide {
-	width: 100%;
+	min-width: 380px;
+	min-height: 119.57px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 0;
-	padding-top: 31.465%;
-	position: absolute;
+	/*padding-top: 9.44%;*/
+	position: relative;
+	display: inline-flex;
 }
 
 .slide > div {
@@ -616,6 +636,7 @@ div#slides {
 	background-color: rgba(200,200,200,.5);
 	font-weight: bold;
 	padding: .5rem;
+	top: 100%;
 }
 
 .slideInfo > div {
@@ -626,20 +647,8 @@ div#slides {
 	background-image: url("images/slide_abouttherescue.jpg");
 }
 
-.slide1 > div {
-	top: 25%;
-	left: 55%;
-	right: 5%;
-}
-
 .slide2 {
 	background-image: url("images/slide_donate.jpg");
-}
-
-.slide2 > div {
-	top: 25%;
-	left: 55%;
-	right: 5%;
 }
 
 /*Gallery card -- gcright has the gallery on the right*/
