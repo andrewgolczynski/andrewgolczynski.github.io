@@ -1,0 +1,175 @@
+body {
+	font-family: Sans-Serif;
+	margin: 0px;
+}
+
+div.welcomePage-container {
+	position: relative;
+}
+
+div.headerLayout-container {
+	color: white;
+}
+
+div.pageHeader-container {
+	position: relative;
+	width: 100%;
+	min-width: 300px;
+	margin: auto;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div.pageHeader-top {
+	font-family: impact;
+	font-size: 4.5rem;
+	display: inline-flex;
+	position: relative;
+	align-items: center;
+}
+
+img.pageHeader-image {
+	height: 7vw;
+	padding-left: .75rem;
+	padding-right: .5rem;
+}
+
+@media only screen and (max-width: 500px) {
+	div.pageHeader-bottom {
+		display: none;
+	}
+	div.pageHeader-top-left {
+		display: none;
+	}
+	div.pageHeader-top-right {
+		display: none;
+	}
+}
+
+div.pageHeader-bottom {
+	font-size: 1.2rem;
+}
+
+ul.navbar-container {
+	list-style-type: none;
+	display: flex;
+	position: relative;
+	width: 100%;
+	margin: auto;
+	padding: 0rem;
+	background-color: rgba(150,150,150,.5)
+}
+
+li.navbarElement-container {
+	width: 16.667%;
+	position: relative;
+	text-align: center;
+	padding: .25rem 0rem .25rem 0rem;
+	margin: .25rem 0rem .25rem 0rem;
+}
+
+a.navbarElement-anchor {
+	text-decoration: none;
+	color: white;
+}
+
+a.navbarElement-anchor:hover {
+	color: blue;
+	text-decoration: none;
+}
+
+div.videoComponent-overlay {
+	width:100%;
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(70,70,70,0.6);
+	color: white;
+	cursor: pointer;
+}
+
+div.videoComponent-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: -1;
+}
+
+div.videoComponent-vidbox {
+	position: relative;
+	/*padding-bottom: 40.1%;
+	padding-top: 25px;
+	width: 90%;*/
+	padding-bottom: 56.1%;
+	height: 0px;
+	overflow: hidden;
+	margin: auto;
+}
+
+iframe.videoComponent-video {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+div.infocardLayout-container {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+div.infocard-container {
+	position: relative;
+	width: 30%;
+	min-width: 380px;
+	padding-top: 1em;
+}
+
+img.infocard-image {
+	width: 100%;
+	position: relative;
+}
+
+div.footerLayout-container {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	padding: 1em;
+	width: 90%;
+}
+
+input.stickyLinkLayout-link {
+	height: 27px;
+}
+
+.stickyLinkLayout-link > img {
+	height: 27px;
+}
+
+.stickyLinkLayout-link {
+	opacity: 0.6;
+}
+
+.stickyLinkLayout-link:hover {
+	opacity: 1;
+}
+
+div.stickyLinkLayout-container {
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+}
+
+div.stickyLinkLayout-standardLinksContainer {
+	display: grid;
+}
