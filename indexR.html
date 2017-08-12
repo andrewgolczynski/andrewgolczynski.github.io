@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IdP Configuration</title>
+	
+	<!-- Import CSS -->
+	<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styleR.css" type="text/css" charset="utf-8">
+	
+	<!-- Import libraries and resources -->
+    <script src="libs/react.min.js"></script>
+    <script src="libs/react-dom.min.js"></script>
+    <script src="libs/browser.min.js"></script>
+    
+  </head>
+  <body>
+    
+    <div id='root'></div>
+    
+    <script type="text/babel">
+		class WelcomePage extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="welcomePage-container">
+						<HeaderLayout />
+						<VideoComponent />
+					</div>
+				);
+			};
+		};
+		
+		class HeaderLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="headerLayout-container">
+						<Navbar />
+						<PageHeader />
+					</div>
+				);
+			};
+		};
+		
+		class PageHeader extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="pageHeader-container">
+						<div className="pageHeader-top">
+							<div className="pageHeader-top-left">
+								Gentle
+							</div>
+							<img src="images/logo-plain-white.png" id="logoimg" alt="Gentle Giants Logo" className="pageHeader-image"></img>
+							<div className="pageHeader-top-right">
+								Giants
+							</div>
+						</div>
+						<div className="pageHeader-bottom">
+							Draft Horse Rescue
+						</div>
+					</div>
+				);
+			};
+		};
+		
+		class Navbar extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<ul className="navbar-container">
+						<NavbarElement faIconClassName="fa-info-circle" menuOptionText="About" linkTarget="https://www.google.com" />
+						<NavbarElement faIconClassName="fa-users" menuOptionText="Help" linkTarget="#" />
+						<NavbarElement faIconClassName="fa-home" menuOptionText="Adopt" linkTarget="#" />
+						<NavbarElement faIconClassName="fa-book" menuOptionText="Learn" linkTarget="#" />
+						<NavbarElement faIconClassName="fa-calendar-o" menuOptionText="Media" linkTarget="#" />
+						<NavbarElement faIconClassName="fa-envelope-o" menuOptionText="Contact" linkTarget="#" />
+					</ul>
+				);
+			};
+		};
+		
+		class NavbarElement extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<li className="navbarElement-container">
+						<a className="navbarElement-anchor" href={this.props.linkTarget}>
+							<div className="navbarElement-content">
+								<i className={"fa fa-lg " + this.props.faIconClassName}></i>
+								<div className="navbarElement-text">
+									{this.props.menuOptionText}
+								</div>
+							</div>	
+						</a>
+					</li>
+				);
+			};
+		};
+		
+		class VideoComponent extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			componentDidMount() {
+				var frame = this.refs.player;
+			};
+			render() {
+				return(
+					<div className="videoComponent-container">
+						<div className="videoComponent-vidbox">
+							<div className="videoComponent-overlay">
+								Overlay text goes here!
+							</div>
+							<iframe ref="player" className="videoComponent-video" src="https://www.youtube.com/embed/3Wo5JvPbkDE?autoplay=0"></iframe>
+						</div>
+						<InfocardLayout />
+						<FooterLayout />
+					</div>
+				);
+			};
+		};
+		
+		class InfocardLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="infocardLayout-container">
+						<Infocard title="Title #1" details="Details #1" background="images/slide_abouttherescue.jpg" />
+						<Infocard title="Title #2" details="Details #2" background="images/slide_donate.jpg" />
+						<Infocard title="Title #3" details="Details #3" background="images/slide_donate.jpg" />
+					</div>
+				);
+			};
+		};
+		
+		class Infocard extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="infocard-container">
+						<div className="infocard-header">
+							<img className="infocard-image" src={this.props.background}></img>
+						</div>
+						<div className="infocard-body">
+							{this.props.title}
+							<br></br>
+							<br></br>
+							<div>
+								{this.props.details}
+							</div>
+						</div>
+					</div>
+				);
+			};
+		};
+		
+		class FooterLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="footerLayout-container">
+						Gentle Giants Draft Horse Rescue
+						<br/>
+						17250 Old Frederick Road - Mount Airy MD 21771
+						<br/>
+						© 2017 all rights reserved.
+					</div>
+				);
+			};
+		};
+		
+		class StickyLinkLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="stickyLinkLayout-container">
+						<form id="paypal-action-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input name="cmd" value="_s-xclick" type="hidden"></input>
+							<input name="hosted_button_id" value="66WGMXF98UHDN" type="hidden"></input>
+							<input className="stickyLinkLayout-link" src="images/paypal-logo.png" name="submit" alt="PayPal - The safer, easier way to pay online!" type="image"></input>
+						</form>
+						<div className="stickyLinkLayout-standardLinksContainer">		
+							<a className="stickyLinkLayout-link" href="http://saveadraft.blogspot.com/" target="_blank">
+								<img src="images/blogger.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="https://www.facebook.com/GentleGiantsDraftHorseRescue" target="_blank">
+								<img src="images/facebook.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="http://twitter.com/#!/GentleGiantsDHR" target="_blank">
+								<img src="images/twitter.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="http://www.youtube.com/user/Gentlegiantsdrafts?feature=watch" target="_blank">
+								<img src="images/youtube.jpg"></img>
+							</a>
+						</div>
+					</div>
+				);
+			};
+		};
+        
+        ReactDOM.render(
+			<div>
+				<WelcomePage />
+				<StickyLinkLayout />
+			</div>, 
+            document.getElementById('root')
+        );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+{
+	"type": "object",
+	"properties": {
+		"ContactGroups": {
+			"type": "array",
+			"id": "ListOfContactGroups",
+			"items": {
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
+
+
+8857 -- defines dialogs under 7649 (config.schema.api) -- id is 364538944
+ -- Config.Schema.API.constructors[Config.Schema.API.constructorsIndex[364538944]]
+
+in console, get the value of an angular scope like this:
+angular.element('selector').scope()
+body > div.page_wrap > div.im_page_wrap.clearfix > div > div.im_dialogs_col_wrap.noselect > div.im_dialogs_col > div > div.im_dialogs_scrollable_wrap.nano-content > ul > li:nth-child(1)
+
+45707 -- relevant function
+
+angular.bootstrap adds ng-app directive?
+
+45244 -- angular.module for myapp.controllers defined >> on 45707, we add the content (under the appimcontroller)
+
+access the controller:
+angular.module("myApp.controllers") ==> returns controller
+
+
+to run controller functions:
+angular.element(document.getElementById('yourControllerElementID')).scope().
+
+function changeText() {
+    var $scope = angular.element(document.getElementById("ctrl")).scope();
+    alert($scope.message);
+    $scope.message = 'goodbye';
+    $scope.$apply();
+}    
+
+jQuery(document).ready(function($) {
+    setTimeout(changeText, 3000);
+});
+
+function getScope() {
+var $scope = angular.element(document).scope();
+alert($scope);
+}
+
+
+
+//get module?
+var version = $injector.modules['myModule']
+
+
+
+angular.element(document).injector().get("$rootScope")
+angular.element(document).injector().get("$rootScope").$$childHead.dialogSelect >> selects dialog from list
+
+angular.element(document).injector().get("$rootScope").$$childHead.$$childHead.dialogs
