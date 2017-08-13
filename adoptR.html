@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IdP Configuration</title>
+	
+	<!-- Import CSS -->
+	<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styleR.css" type="text/css" charset="utf-8">
+	
+	<!-- Import libraries and resources -->
+    <script src="libs/react.min.js"></script>
+    <script src="libs/react-dom.min.js"></script>
+    <script src="libs/browser.min.js"></script>
+    
+  </head>
+  <body>
+    
+    <div id='root'></div>
+    
+    <script type="text/babel">
+	
+		/*Begin shared components*/
+		class HeaderLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="headerLayout-container">
+						<Navbar />
+						<PageHeader />
+					</div>
+				);
+			};
+		};
+		
+		class PageHeader extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="pageHeader-container">
+						<div className="pageHeader-top">
+							<div className="pageHeader-top-left">
+								Gentle
+							</div>
+							<a href="indexR.html">
+								<img src="images/logo-plain-white.png" id="logoimg" alt="Gentle Giants Logo" className="pageHeader-image"></img>
+							</a>
+							<div className="pageHeader-top-right">
+								Giants
+							</div>
+						</div>
+						<div className="pageHeader-bottom">
+							Draft Horse Rescue
+						</div>
+					</div>
+				);
+			};
+		};
+		
+		class Navbar extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<ul className="navbar-container">
+						<NavbarElement faIconClassName="fa-info-circle" menuOptionText="About" linkTarget="infoR.html" />
+						<NavbarElement faIconClassName="fa-users" menuOptionText="Help" linkTarget="helpR.html" />
+						<NavbarElement faIconClassName="fa-home" menuOptionText="Adopt" linkTarget="adoptR.html" />
+						<NavbarElement faIconClassName="fa-heart" menuOptionText="Horses" linkTarget="horsesR.html" />
+						<NavbarElement faIconClassName="fa-book" menuOptionText="Learn" linkTarget="learnR.html" />
+						<NavbarElement faIconClassName="fa-calendar-o" menuOptionText="Media" linkTarget="mediaR.html" />
+						<NavbarElement faIconClassName="fa-envelope-o" menuOptionText="Contact" linkTarget="contactR.html" />
+					</ul>
+				);
+			};
+		};
+		
+		class NavbarElement extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<li className="navbarElement-container">
+						<a className="navbarElement-anchor" href={this.props.linkTarget}>
+							<div className="navbarElement-content">
+								<i className={"fa fa-lg " + this.props.faIconClassName}></i>
+								<div className="navbarElement-text">
+									{this.props.menuOptionText}
+								</div>
+							</div>	
+						</a>
+					</li>
+				);
+			};
+		};
+		
+		class FooterLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="footerLayout-container">
+						Gentle Giants Draft Horse Rescue
+						<br/>
+						17250 Old Frederick Road - Mount Airy MD 21771
+						<br/>
+						© 2017 all rights reserved.
+					</div>
+				);
+			};
+		};
+		
+		class StickyLinkLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="stickyLinkLayout-container">
+						<form id="paypal-action-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input name="cmd" value="_s-xclick" type="hidden"></input>
+							<input name="hosted_button_id" value="66WGMXF98UHDN" type="hidden"></input>
+							<input className="stickyLinkLayout-link" src="images/paypal-logo.png" name="submit" alt="PayPal - The safer, easier way to pay online!" type="image"></input>
+						</form>
+						<div className="stickyLinkLayout-standardLinksContainer">		
+							<a className="stickyLinkLayout-link" href="http://saveadraft.blogspot.com/" target="_blank">
+								<img src="images/blogger.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="https://www.facebook.com/GentleGiantsDraftHorseRescue" target="_blank">
+								<img src="images/facebook.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="http://twitter.com/#!/GentleGiantsDHR" target="_blank">
+								<img src="images/twitter.png"></img>
+							</a>
+							<a className="stickyLinkLayout-link" href="http://www.youtube.com/user/Gentlegiantsdrafts?feature=watch" target="_blank">
+								<img src="images/youtube.jpg"></img>
+							</a>
+						</div>
+					</div>
+				);
+			};
+		};
+		
+		/*End shared components*/
+		
+		class AdoptPage extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="adoptPage-container">
+						<HeaderLayout />
+						<AdoptPageContent />
+					</div>
+				);
+			};
+		};
+		
+		class AdoptPageContent extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="pageContent-container">
+						<div className="headerImage"></div>
+						<div>
+							<div className="sectionTitle">
+								Things to consider before adoption
+							</div>
+							<div>
+								<p>
+								All adoptions are limited to a 4 hour radius of our location, as determined by our GPS.
+								</p><p>
+								We are committed to making the best possible match between horse and rider. We represent our horses as accurately as possible by our experience with them, but as experienced handlers, we are often able to easily handle a behavior that an adopter may not.
+								</p><p>
+								Adopters need to realize that no single horse is ever perfect, and it is the responsibility of the Adopter to determine if the horse is appropriate for their ability and experience. We do stand behind our horses, but cannot foresee all future circumstances.
+								</p><p>
+								We expect Adoptive families to have weighed the decision to adopt heavily, that they are fully aware of the unforeseen expenses potential with horse ownership, and that they are committed to the horse of their choice. If you run into a problem with your new horse, we expect that you will pursue any and all options to continue to provide the horse with a good home, including training for the horse, or yourself, to overcome a problem.
+								</p><p>
+								All adopted horses must be returned to the care of Gentle Giants Draft Horse Rescue if, for any reason, the adopter is unable or unwilling to keep the horse. No adopted horse may be sold, loaned, leased, traded, given away, auctioned, or transferred to a third party.
+								</p>
+							</div>
+						</div>
+						<div className="sectionTitle">
+							Adoption Process
+						</div>
+						<div>
+							<ol className="orderedList">
+								<li className="listItem">
+									<div className="listItem-title">
+										Schedule an appointment
+									</div>
+									<div className="listItem-content">
+										You must email to schedule an appointment to meet and ride the horse that you are interested in adopting. 
+										We encourage adopters to take their time, as the interaction is an opportunity to observe the compatibility of both horse and rider. 
+										Please be certain you are committed to your appointment time, and are seriously interested in the horse you wish to meet.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Prepare for your appointment
+									</div>
+									<div className="listItem-content">
+										Please go over our <a href="infoR.html#rules">barn rules</a> to ensure you are prepared for your appointment.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Fill out an application
+									</div>
+									<div className="listItem-content">
+										If the adopter and the horse are compatible, an Adoption Application must be completed and a deposit of 1/3 the adoption fee must be made. 
+										Applications will not be accepted if the adopter has not been evaluated with the horse, or if the prospective adopter was not found suitable for the horse.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Adopter Review
+									</div>
+									<div className="listItem-content">
+										Once the Adoption Application has been received, Gentle Giants Draft Horse Rescue will contact the references provided and will schedule a visit to the facility where the horse will be kept. 
+										It is acceptable for an adopted horse to be boarded, providing the facilities and care are adequate.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Adoptee Review
+									</div>
+									<div className="listItem-content">
+										A copy of the Adoption Agreement will be given to the Adoptive family to review. 
+										The terms of Adoption are explored in detail in this Agreement.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Board approval
+									</div>
+									<div className="listItem-content">
+										The Board of Directors will meet to determine the home most suitable for the needs of each individual horse and rider. 
+										We regret that we cannot reserve a horse for visitation, and all applications for adoption will be considered on a first come, first serve basis.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Adoption!
+									</div>
+									<div className="listItem-content">
+										Upon a final decision, the Adoption Agreement must be signed by both parties, and the Adoption Fee balance must be paid in full. 
+										Adoption Fees are non-refundable and facilitate the rescue and rehabilitation of future horses from slaughter. 
+										Adoption fees will not be returned, even in the event the horse is returned to Gentle Giants for re-adoption.
+									</div>
+								</li>
+							</ol>
+						</div>
+						<div className="sectionTitle">
+							Adoption Requirements
+						</div>
+						<div>
+							Gentle Giants maintains the highest standards for all its horses, whether they are at the rescue, or adopted into a new home.
+							As such, we work with prospective adopters to ensure that they can provide the best possible home for their new family members.
+							
+							<ol className="orderedList">
+								<li className="listItem">
+									<div className="listItem-title">
+										Fencing
+									</div>
+									<div className="listItem-content">
+										Gentle Giants accepts the following types of fencing:
+										<ul>
+											<li> Board and post</li>
+											<li> No Climb or Stock Wire </li>
+											<li> Electro-Braid or Poly Rope </li>
+											<li> Corral Panel </li>
+											<li> Split Rail </li>
+											<li> Vinyl or PVC Fencing </li>
+											<li> Coated Wire </li>
+											<li> High Tensile </li>
+											<li> Electric Tape (minimum of 3 strands) </li>
+										</ul>
+										Fencing must be a minimum height of 4.5 feet. All fencing is expected to be in good repair, well maintained, and free of fallen debris or overgrowth. Wire fencing is expected to be tight and without sagging.
+										<ul>
+											<li>Cattle Grates or Cattle Guards of any kind in areas accessible to horses </li>
+											<li>Barb Wire </li>
+											<li>Chain Link </li>
+											<li>Plastic Construction or Snow Fence </li>
+											<li>Step-In Posts as primary or perimeter fencing </li>
+											<li>T-Posts as primary or perimeter fencing </li>
+										</ul>
+										For example, it would be acceptable to use Step-In or T-Posts as temporary fencing, a fence patch, or to create rotational grazing within a larger paddock. We do not accept either Step-In posts or T-Posts as permanent perimeter fencing.
+									</div>
+								</li>
+								<li className="listItem">
+									<div className="listItem-title">
+										Shelter
+									</div>
+									<div className="listItem-content">
+										Gentle Giants accepts field board with access to a run in shed, as well as access to a stall to both be forms of adequate shelter. Gentle Giants does not accept trees or other natural windbreaks to be shelter. 
+										<ul>
+											   <li>Run-In Sheds:  Must be of adequate size for the number of horses present, based on a 
+											   measurement of 6x6 per horse.  Run-Ins must be three sided with a roof, and must have 
+											   solid and reasonably clean footing. </li>  
+											   <li>Stalls:  Minimum acceptable stall size is 10x10, with 12x12 or larger being strongly 
+											   preferable.  Horses are expected to have a minimum of 12 hours turn out daily except 
+											   in the most extreme of weather conditions </li>.
+										 </ul>
+									</div>
+								</li>
+								
+								<li className="listItem">
+									<div className="listItem-title">
+										Pasture
+									</div>
+									<div className="listItem-content">
+										Minimum requirement of 1 fenced acre per horse. 
+										Acreage must meet local zoning regulations for housing horses, which may exceed Gentle Giants requirements. 
+										In such situations, local zoning takes precedence over Gentle Giants requirements. 
+										The exception to this requirement is the horse that requires a dry lot for insulin resistance.
+									</div>
+								</li>
+								
+								<li className="listItem">
+									<div className="listItem-title">
+										Water
+									</div>
+									<div className="listItem-content">
+										Gentle Giants requires that horses have access to clean, fresh water in pastures and when stalled. 
+										Water needs to be provided in a trough or tub, with the ability to prevent freezing in winter weather. 
+										Natural water sources such as ponds, creeks, and streams are not accepted as a primary water source, but may be available as secondary water sources. 
+										We highly encourage the fencing off of bodies of water where deep mud can accumulate on banks or shores. 
+									</div>
+								</li>
+								
+								<li className="listItem">
+									<div className="listItem-title">
+										Companionship
+									</div>
+									<div className="listItem-content">
+										Gentle Giants requires that at least one other equine (horse, mule, pony, miniature horse, or donkey) be present as a companion for any adopted horse. 
+										Goats, sheep, and other farm animals are not considered adequate companions. 
+										Horses must minimally be able to socialize over a fence line. 
+										<br></br>
+										All companion horses/mules/donkeys are expected to be in good health, of a body condition score of 4 or better, be current on legally required vaccines and Equine Infectious Anemia (Coggins) testing, and have adequately maintained hoof care. 
+									</div>
+								</li>
+							</ol>
+							
+						</div>
+						<FooterLayout />
+					</div>
+				);
+			};
+		};
+        
+        ReactDOM.render(
+			<div>
+				<AdoptPage />
+				<StickyLinkLayout />
+			</div>, 
+            document.getElementById('root')
+        );
+    </script>
+  </body>
+</html>

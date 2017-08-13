@@ -19,20 +19,7 @@
     <div id='root'></div>
     
     <script type="text/babel">
-		class WelcomePage extends React.Component {
-			constructor(props) {
-				super(props);
-			};
-			render() {
-				return(
-					<div className="welcomePage-container">
-						<HeaderLayout />
-						<VideoComponent />
-					</div>
-				);
-			};
-		};
-		
+		/*Begin shared components*/
 		class HeaderLayout extends React.Component {
 			constructor(props) {
 				super(props);
@@ -58,7 +45,9 @@
 							<div className="pageHeader-top-left">
 								Gentle
 							</div>
-							<img src="images/logo-plain-white.png" id="logoimg" alt="Gentle Giants Logo" className="pageHeader-image"></img>
+							<a href="indexR.html">
+								<img src="images/logo-plain-white.png" id="logoimg" alt="Gentle Giants Logo" className="pageHeader-image"></img>
+							</a>
 							<div className="pageHeader-top-right">
 								Giants
 							</div>
@@ -78,12 +67,13 @@
 			render() {
 				return(
 					<ul className="navbar-container">
-						<NavbarElement faIconClassName="fa-info-circle" menuOptionText="About" linkTarget="https://www.google.com" />
-						<NavbarElement faIconClassName="fa-users" menuOptionText="Help" linkTarget="#" />
-						<NavbarElement faIconClassName="fa-home" menuOptionText="Adopt" linkTarget="#" />
-						<NavbarElement faIconClassName="fa-book" menuOptionText="Learn" linkTarget="#" />
-						<NavbarElement faIconClassName="fa-calendar-o" menuOptionText="Media" linkTarget="#" />
-						<NavbarElement faIconClassName="fa-envelope-o" menuOptionText="Contact" linkTarget="#" />
+						<NavbarElement faIconClassName="fa-info-circle" menuOptionText="About" linkTarget="infoR.html" />
+						<NavbarElement faIconClassName="fa-users" menuOptionText="Help" linkTarget="helpR.html" />
+						<NavbarElement faIconClassName="fa-home" menuOptionText="Adopt" linkTarget="adoptR.html" />
+						<NavbarElement faIconClassName="fa-heart" menuOptionText="Horses" linkTarget="horsesR.html" />
+						<NavbarElement faIconClassName="fa-book" menuOptionText="Learn" linkTarget="learnR.html" />
+						<NavbarElement faIconClassName="fa-calendar-o" menuOptionText="Media" linkTarget="mediaR.html" />
+						<NavbarElement faIconClassName="fa-envelope-o" menuOptionText="Contact" linkTarget="contactR.html" />
 					</ul>
 				);
 			};
@@ -105,67 +95,6 @@
 							</div>	
 						</a>
 					</li>
-				);
-			};
-		};
-		
-		class VideoComponent extends React.Component {
-			constructor(props) {
-				super(props);
-			};
-			componentDidMount() {
-				var frame = this.refs.player;
-			};
-			render() {
-				return(
-					<div className="videoComponent-container">
-						<div className="videoComponent-vidbox">
-							<div className="videoComponent-overlay">
-								Overlay text goes here!
-							</div>
-							<iframe ref="player" className="videoComponent-video" src="https://www.youtube.com/embed/3Wo5JvPbkDE?autoplay=0"></iframe>
-						</div>
-						<InfocardLayout />
-						<FooterLayout />
-					</div>
-				);
-			};
-		};
-		
-		class InfocardLayout extends React.Component {
-			constructor(props) {
-				super(props);
-			};
-			render() {
-				return(
-					<div className="infocardLayout-container">
-						<Infocard title="Title #1" details="Details #1" background="images/slide_abouttherescue.jpg" />
-						<Infocard title="Title #2" details="Details #2" background="images/slide_donate.jpg" />
-						<Infocard title="Title #3" details="Details #3" background="images/slide_donate.jpg" />
-					</div>
-				);
-			};
-		};
-		
-		class Infocard extends React.Component {
-			constructor(props) {
-				super(props);
-			};
-			render() {
-				return(
-					<div className="infocard-container">
-						<div className="infocard-header">
-							<img className="infocard-image" src={this.props.background}></img>
-						</div>
-						<div className="infocard-body">
-							{this.props.title}
-							<br></br>
-							<br></br>
-							<div>
-								{this.props.details}
-							</div>
-						</div>
-					</div>
 				);
 			};
 		};
@@ -212,6 +141,94 @@
 							<a className="stickyLinkLayout-link" href="http://www.youtube.com/user/Gentlegiantsdrafts?feature=watch" target="_blank">
 								<img src="images/youtube.jpg"></img>
 							</a>
+						</div>
+					</div>
+				);
+			};
+		};
+		
+		/*End shared components*/
+		
+		class WelcomePage extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="welcomePage-container">
+						<HeaderLayout />
+						<WelcomePageContent />
+					</div>
+				);
+			};
+		};
+		
+		class WelcomePageContent extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			componentDidMount() {
+				var frame = this.refs.player;
+			};
+			render() {
+				return(
+					<div className="pageContent-container">
+						<VideoComponent />
+						<InfocardLayout />
+						<FooterLayout />
+					</div>
+				);
+			};
+		};
+		
+		class VideoComponent extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="videoComponent-container">
+						<div className="videoComponent-overlay">
+							Overlay text goes here!
+						</div>
+						<iframe ref="player" className="videoComponent-video" src="https://www.youtube.com/embed/3Wo5JvPbkDE?autoplay=0"></iframe>
+					</div>
+				);
+			};
+		};
+		
+		class InfocardLayout extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="infocardLayout-container">
+						<Infocard title="Title #1" details="Details #1" background="images/slide_abouttherescue.jpg" />
+						<Infocard title="Title #2" details="Details #2" background="images/slide_donate.jpg" />
+						<Infocard title="Title #3" details="Details #3" background="images/slide_donate.jpg" />
+					</div>
+				);
+			};
+		};
+		
+		class Infocard extends React.Component {
+			constructor(props) {
+				super(props);
+			};
+			render() {
+				return(
+					<div className="infocard-container">
+						<div className="infocard-header">
+							<img className="infocard-image" src={this.props.background}></img>
+						</div>
+						<div className="infocard-body">
+							{this.props.title}
+							<br></br>
+							<br></br>
+							<div>
+								{this.props.details}
+							</div>
 						</div>
 					</div>
 				);
