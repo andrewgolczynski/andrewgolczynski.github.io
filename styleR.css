@@ -20,6 +20,7 @@ div.pageHeader-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 7.5vw;
 }
 
 div.pageHeader-top {
@@ -55,11 +56,12 @@ div.pageHeader-bottom {
 ul.navbar-container {
 	list-style-type: none;
 	display: flex;
-	position: relative;
+	position: fixed;
 	width: 100%;
 	margin: auto;
 	padding: 0rem;
-	background-color: rgba(150,150,150,.5)
+	background-color: rgba(150,150,150,.5);
+	z-index: 2;
 }
 
 li.navbarElement-container {
@@ -93,18 +95,15 @@ div.videoComponent-overlay {
 	cursor: pointer;
 }
 
-div.videoComponent-container {
+div.pageContent-container {
 	position: absolute;
 	width: 100%;
 	top: 0;
 	z-index: -1;
 }
 
-div.videoComponent-vidbox {
+div.videoComponent-container {
 	position: relative;
-	/*padding-bottom: 40.1%;
-	padding-top: 25px;
-	width: 90%;*/
 	padding-bottom: 56.1%;
 	height: 0px;
 	overflow: hidden;
@@ -172,4 +171,56 @@ div.stickyLinkLayout-container {
 
 div.stickyLinkLayout-standardLinksContainer {
 	display: grid;
+}
+
+/*Content section title*/
+
+div.sectionTitle {
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: bolder;
+	margin-bottom: .5rem;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-color: lightgray;
+}
+
+/*Header images*/
+
+div.headerImage {
+	background-size: cover;
+	height: 35vw;
+	background-image: url("images/bannerDrivewayHorses.jpg");
+}
+
+/*Instructive lists*/
+ol.orderedList {
+	
+}
+
+li.listItem {
+	list-style: none;
+}
+
+div.listItem-title {
+	font-weight: bolder;
+}
+
+div.listItem-content {
+	
+}
+
+/*Info page*/
+div.generalInfo-container {
+	margin: auto;
+	width: 90%;
+}
+
+div.infoPageContent-image {
+	
+}
+
+/*Adopt page*/
+div.adoptPageContent-image {
+	
 }
